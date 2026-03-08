@@ -1,0 +1,325 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+const courseCategories = [
+  {
+    title: "English & Language Tests",
+    courses: [
+      "IELTS (Academic & General)",
+      "PTE (Academic & Core)",
+      "Duolingo",
+      "CELPIP",
+      "OET",
+      "Spoken English (Beginner - Advanced)",
+      "French",
+      "German",
+    ],
+  },
+  {
+    title: "Competitive Exams",
+    courses: [
+      "Sainik School",
+      "RIMC",
+      "Rashtriya Military School",
+      "SSC",
+      "CUET",
+      "CTET",
+      "HTET",
+      "Banking Exams",
+    ],
+  },
+  {
+    title: "Academics",
+    courses: [
+      "Class 8 - 10 (Maths, Science, English)",
+      "Class 11 - 12 (Maths, Science, English)",
+      "Interview Preparation",
+      "Personality Development",
+    ],
+  },
+];
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+];
+
+const courses = [
+  "Graphic Design",
+  "UI/UX Design",
+  "Video Editing",
+  "Digital Marketing",
+  "Animation",
+  "Photography",
+];
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [courseOpen, setCourseOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+
+  // navbar background change on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header className="fixed top-0 w-full z-50">
+      {/* CONTACT STRIP */}
+      <div className="bg-[#19125e] text-white text-sm">
+        <div className="max-w-7xl mx-auto px-6 flex justify-end items-center gap-8 h-10">
+          <div className="flex gap-6">
+            <div className="flex items-center gap-2">
+              <Phone size={16} className="text-[#f0c44c]" />
+              <span>+91 9876543210</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Mail size={16} className="text-[#f0c44c]" />
+              <span>info@brightmindshub.in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MAIN NAVBAR */}
+      <motion.nav
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className={`transition-all duration-300 ${
+          scrolled ? "bg-white shadow-lg" : "bg-white"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* LOGO */}
+            <Link href="/">
+              <Image
+                src={"/brightMindsAcademy-logo.jpeg"}
+                alt="logo"
+                width={230}
+                height={80}
+              />
+            </Link>
+
+            {/* DESKTOP MENU */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="relative group text-[#19125e] font-medium"
+                >
+                  {link.name}
+
+                  {/* underline animation */}
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+                </Link>
+              ))}
+
+              {/* COURSES MEGA MENU */}
+              <div
+                className="relative"
+                onMouseEnter={() => setCourseOpen(true)}
+                onMouseLeave={() => setCourseOpen(false)}
+              >
+                <button className="flex items-center gap-1 text-[#19125e] font-medium relative group">
+                  Courses
+                  <ChevronDown size={16} />
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+                </button>
+
+                <AnimatePresence>
+                  {courseOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 10 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute left-1/2 -translate-x-1/2 top-12 bg-white shadow-2xl rounded-xl p-8 w-[900px]"
+                    >
+                      <div className="grid grid-cols-3 gap-8">
+                        {courseCategories.map((category) => (
+                          <div key={category.title}>
+                            <h3 className="text-[#19125e] font-semibold mb-3 border-b pb-2">
+                              {category.title}
+                            </h3>
+
+                            <div className="flex flex-col gap-2">
+                              {category.courses.map((course) => (
+                                <Link
+                                  key={course}
+                                  href="/courses"
+                                  className="text-gray-600 hover:text-[#f0c44c] text-sm"
+                                >
+                                  {course}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <Link href="/blog" className="relative group text-[#19125e]">
+                Blog
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+              </Link>
+
+              <Link href="/contact" className="relative group text-[#19125e]">
+                FAQs
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+              </Link>
+
+              {/* APPLY BUTTON */}
+              <Link
+                href="/apply"
+                className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition"
+              >
+                Contact us
+              </Link>
+            </div>
+
+            {/* MOBILE MENU BUTTON */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden text-[#19125e]"
+            >
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
+      </motion.nav>
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+              className="fixed inset-0 bg-black z-40"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: 320 }}
+              animate={{ x: 0 }}
+              exit={{ x: 320 }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-75 bg-white z-50 shadow-xl p-6 overflow-y-auto"
+            >
+              {/* Drawer Header */}
+              <div className="flex items-center justify-end mb-6">
+                <button onClick={() => setMenuOpen(false)}>
+                  <X size={26} />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex flex-col gap-5">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="text-[#19125e] font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+
+                {/* Courses Section */}
+                <div>
+                  <button
+                    onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+                    className="flex items-center justify-between w-full font-semibold text-[#19125e]"
+                  >
+                    Courses
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform ${
+                        mobileCoursesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {mobileCoursesOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        className="overflow-hidden mt-3 flex flex-col gap-4"
+                      >
+                        {courseCategories.map((category) => (
+                          <div key={category.title}>
+                            <p className="font-semibold text-[#19125e] text-sm">
+                              {category.title}
+                            </p>
+
+                            <div className="flex flex-col gap-1 pl-3 mt-1">
+                              {category.courses.map((course) => (
+                                <Link
+                                  key={course}
+                                  href="/courses"
+                                  onClick={() => setMenuOpen(false)}
+                                  className="text-gray-600 text-sm"
+                                >
+                                  {course}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link
+                  href="/blog"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-[#19125e]"
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-[#19125e]"
+                >
+                  FAQs
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="bg-[#19125e] text-white text-center py-2 rounded-lg mt-2"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
