@@ -53,6 +53,13 @@ export default function CoursesSection() {
 
   return (
     <section className="relative py-20 bg-linear-to-r from-[#19125e]/5 via-white to-[#f0c44c]/10">
+      <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
+
+  <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">
+    Our Courses
+  </h2>
+
+</div>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Heading */}
        <motion.h2

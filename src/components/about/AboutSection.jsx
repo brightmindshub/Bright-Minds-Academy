@@ -6,7 +6,13 @@ import { CheckCircle, Target, Award } from "lucide-react";
 export default function AboutSection() {
   return (
     <section className="relative py-20 overflow-hidden bg-linear-to-br from-[#19125e]/10 via-white to-[#f0c44c]/10">
+      <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
 
+  <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">
+    Bright Minds
+  </h2>
+
+</div>
       {/* Decorative background blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-[#19125e]/20 rounded-full blur-2xl"></div>

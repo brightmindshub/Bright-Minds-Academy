@@ -73,7 +73,7 @@ export default function LeadFormModal({ open, onClose, courses }) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg bg-white rounded-xl shadow-xl p-6 border border-[#19125e]"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-95 md:w-full max-w-lg bg-white rounded-xl shadow-xl p-6 border border-[#19125e]"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
