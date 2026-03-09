@@ -41,11 +41,11 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
           <ul className="flex flex-col gap-2 text-gray-300">
-            <li><Link href="/" className="hover:text-[#f0c44c] transition">Home</Link></li>
             <li><Link href="/about" className="hover:text-[#f0c44c] transition">About Us</Link></li>
-            <li><Link href="/courses" className="hover:text-[#f0c44c] transition">Courses</Link></li>
-            <li><Link href="/blog" className="hover:text-[#f0c44c] transition">Blog</Link></li>
-            <li><Link href="/contact" className="hover:text-[#f0c44c] transition">Contact</Link></li>
+            <li><Link href="/reviews" className="hover:text-[#f0c44c] transition">Student Reviews</Link></li>
+            <li><Link href="/blogs" className="hover:text-[#f0c44c] transition">Blogs</Link></li>
+            <li><Link href="/faq-section" className="hover:text-[#f0c44c] transition">FAQs</Link></li>
+            <li><Link href="/contact" className="hover:text-[#f0c44c] transition">Contact us</Link></li>
           </ul>
         </div>
 
@@ -75,7 +75,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
           <ul className="flex flex-col gap-3 text-gray-300">
-            <li className="flex items-center gap-2"><Phone size={18} className="text-[#f0c44c]" /> +91 9876543210</li>
+            <li className="flex items-center gap-2"><Phone size={18} className="text-[#f0c44c]" /> +91 9217669989</li>
             <li className="flex items-center gap-2"><Mail size={18} className="text-[#f0c44c]" /> info@brightmindshub.in</li>
             <li className="flex items-start flex-col gap-2">Address: RZ- 58-61, Vashisht Park, Pankha Road, Near Sagarpur bus stand, New Delhi - 110046</li>
           </ul>

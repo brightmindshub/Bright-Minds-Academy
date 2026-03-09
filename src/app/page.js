@@ -1,4 +1,5 @@
 import AboutSection from "@/components/about/AboutSection";
+import BlogsSection from "@/components/blogs/BlogSection";
 import CoursesSection from "@/components/courses/CoursesSection";
 import FaqSection from "@/components/faq/FaqSection";
 import HeroSection from "@/components/hero/HeroSection";
@@ -9,11 +10,12 @@ export default function Home() {
   return (
     <>
         <HeroSection/>
+        <CoursesSection/>
         <AboutSection/>
         <WhyChooseSection/>
-        <CoursesSection/>
         <TestimonialsSection/>
         <FaqSection/>
+        <BlogsSection/>
     </>
   );
 }

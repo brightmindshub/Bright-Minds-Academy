@@ -36,7 +36,7 @@ export default function WhatsAppChat({ courses }) {
       handleUserMessage(userInput);
       // Redirect to WhatsApp
       const message = `Hi BrightMinds Academy! My name is ${messages.find(m=>m.type==='user')?.text || ''} and I am interested in ${userInput}.`;
-      const url = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+      const url = `https://wa.me/919217669989?text=${encodeURIComponent(message)}`;
       window.open(url, "_blank");
       // Reset
       setTimeout(() => {
@@ -58,7 +58,7 @@ export default function WhatsAppChat({ courses }) {
   }, [open]);
 
     useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 4000);
+    const timer = setTimeout(() => setOpen(true), 6000);
     return () => clearTimeout(timer);
   }, []);
 

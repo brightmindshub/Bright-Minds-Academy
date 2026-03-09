@@ -86,12 +86,12 @@ export default function Navbar() {
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <Phone size={16} className="text-[#f0c44c]" />
-              <span>+91 9876543210</span>
+              <span className="text-xs md:text-sm">+91 9217669989</span>
             </div>
 
             <div className="flex items-center gap-2">
               <Mail size={16} className="text-[#f0c44c]" />
-              <span>info@brightmindshub.in</span>
+              <span className="text-xs md:text-sm">brightmindsacademy413@gmail.com</span>
             </div>
           </div>
         </div>
@@ -109,13 +109,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* LOGO */}
             <motion.div layoutId="brand-logo">
-  <Image
-    src="/brightMindsAcademy-logo.jpeg"
-    alt="logo"
-    width={230}
-    height={80}
-  />
-</motion.div>
+              <Image
+                src="/brightMindsAcademy-logo.jpeg"
+                alt="logo"
+                width={230}
+                height={80}
+              />
+            </motion.div>
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center gap-8">
