@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
   const [showLeadForm, setShowLeadForm] = useState(false);
 
   return (
-    <section className="relative py-24 bg-[#f7f8fc]">
+    <section className="relative py-24 bg-[#f7f8fc]" id="reviews">
         {/* Background Watermark Text */}
 <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
 

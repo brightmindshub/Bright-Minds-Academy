@@ -49,20 +49,24 @@ const navLinks = [
   { name: "About", href: "/about" },
 ];
 
-const courses = [
-  "Graphic Design",
-  "UI/UX Design",
-  "Video Editing",
-  "Digital Marketing",
-  "Animation",
-  "Photography",
-];
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [courseOpen, setCourseOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setMenuOpen(false); // close mobile menu
+  };
 
   // navbar background change on scroll
   useEffect(() => {
@@ -78,7 +82,7 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50">
       {/* CONTACT STRIP */}
       <div className="bg-[#19125e] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-6 flex justify-end items-center gap-8 h-10">
+        <div className="max-w-7xl mx-auto px-6 flex justify-center md:justify-end items-center gap-8 h-10">
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <Phone size={16} className="text-[#f0c44c]" />
@@ -104,29 +108,24 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* LOGO */}
-            <Link href="/">
-              <Image
-                src={"/brightMindsAcademy-logo.jpeg"}
-                alt="logo"
-                width={230}
-                height={80}
-              />
-            </Link>
+            <motion.div layoutId="brand-logo">
+  <Image
+    src="/brightMindsAcademy-logo.jpeg"
+    alt="logo"
+    width={230}
+    height={80}
+  />
+</motion.div>
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="relative group text-[#19125e] font-medium"
-                >
-                  {link.name}
-
-                  {/* underline animation */}
-                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
-                </Link>
-              ))}
+              <button
+                onClick={() => handleScrollToSection("about")}
+                className="relative group text-[#19125e] cursor-pointer"
+              >
+                About us
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+              </button>
 
               {/* COURSES MEGA MENU */}
               <div
@@ -175,23 +174,36 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <Link href="/blog" className="relative group text-[#19125e]">
-                Blog
+              <button
+                onClick={() => handleScrollToSection("reviews")}
+                className="relative group text-[#19125e] cursor-pointer"
+              >
+                Reviews
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
-              </Link>
+              </button>
 
-              <Link href="/contact" className="relative group text-[#19125e]">
+              <button
+                onClick={() => handleScrollToSection("blogs")}
+                className="relative group text-[#19125e] cursor-pointer"
+              >
+                Blogs
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+              </button>
+
+              <button
+                onClick={() => handleScrollToSection("faq-section")}
+                className="relative group text-[#19125e] cursor-pointer"
+              >
                 FAQs
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
-              </Link>
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+              </button>
 
-              {/* APPLY BUTTON */}
-              <Link
-                href="/apply"
+              <button
+                onClick={() => {}}
                 className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition"
               >
                 Contact us
-              </Link>
+              </button>
             </div>
 
             {/* MOBILE MENU BUTTON */}
@@ -233,16 +245,12 @@ export default function Navbar() {
 
               {/* Navigation Links */}
               <div className="flex flex-col gap-5">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-[#19125e] font-medium"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+                <button
+                  onClick={() => handleScrollToSection("about")}
+                  className="text-left text-[#19125e]"
+                >
+                  About us
+                </button>
 
                 {/* Courses Section */}
                 <div>
@@ -292,29 +300,33 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
 
-                <Link
-                  href="/blog"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-[#19125e]"
+                <button
+                  onClick={() => handleScrollToSection("reviews")}
+                  className="text-left text-[#19125e]"
                 >
-                  Blog
-                </Link>
+                  Reviews
+                </button>
 
-                <Link
-                  href="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-[#19125e]"
+                <button
+                  onClick={() => handleScrollToSection("blogs")}
+                  className="text-left text-[#19125e]"
+                >
+                  Blogs
+                </button>
+
+                <button
+                  onClick={() => handleScrollToSection("faq-section")}
+                  className="text-left text-[#19125e]"
                 >
                   FAQs
-                </Link>
+                </button>
 
-                <Link
-                  href="/contact"
+                <button
                   onClick={() => setMenuOpen(false)}
                   className="bg-[#19125e] text-white text-center py-2 rounded-lg mt-2"
                 >
                   Contact Us
-                </Link>
+                </button>
               </div>
             </motion.div>
           </>

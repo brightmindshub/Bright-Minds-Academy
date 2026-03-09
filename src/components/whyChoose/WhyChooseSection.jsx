@@ -71,7 +71,7 @@ export default function WhyChooseSection() {
   const [showLeadForm, setShowLeadForm] = useState(false);
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#19125e]/10 via-white to-[#f0c44c]/10">
+    <section className="relative py-24 overflow-hidden bg-linear-to-br from-[#19125e]/10 via-white to-[#f0c44c]/10">
         <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
 
   <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">

@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsappChat/WhatsAppChat";
+import Footer from "@/components/footer/Footer";
+import LoaderWrapper from "@/components/loader/LoaderWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,9 +64,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LoaderWrapper>
         <WhatsAppChat courses={courses}/>
         <Navbar/>
         {children}
+        <Footer/>
+        </LoaderWrapper>
       </body>
     </html>
   );
