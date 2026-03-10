@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const courseCategories = [
   {
@@ -54,6 +55,7 @@ export default function Navbar() {
   const [courseOpen, setCourseOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const router = useRouter()
 
   const handleScrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -199,7 +201,7 @@ export default function Navbar() {
               </button>
 
               <button
-                onClick={() => {}}
+                onClick={() => {router.push("/contact")}}
                 className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition"
               >
                 Contact us
@@ -322,7 +324,7 @@ export default function Navbar() {
                 </button>
 
                 <button
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {setMenuOpen(false); router.push("/contact")}}
                   className="bg-[#19125e] text-white text-center py-2 rounded-lg mt-2"
                 >
                   Contact Us
