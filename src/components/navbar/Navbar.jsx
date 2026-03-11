@@ -55,6 +55,8 @@ export default function Navbar() {
   const [courseOpen, setCourseOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const router = useRouter()
 
   const handleScrollToSection = (id) => {
@@ -121,13 +123,56 @@ export default function Navbar() {
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center gap-8">
-              <button
-                onClick={() => handleScrollToSection("about")}
-                className="relative group text-[#19125e] cursor-pointer"
-              >
-                About us
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
-              </button>
+              {/* ABOUT MEGA MENU */}
+
+<div
+  className="relative"
+  onMouseEnter={() => setAboutOpen(true)}
+  onMouseLeave={() => setAboutOpen(false)}
+>
+  <button className="flex items-center gap-1 text-[#19125e] font-medium relative group">
+    About Us
+    <ChevronDown size={16} />
+    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+  </button>
+
+  <AnimatePresence>
+    {aboutOpen && (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 10 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.3 }}
+        className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-xl rounded-xl p-6 w-[250px]"
+      >
+        <div className="flex flex-col gap-3">
+
+          <button
+            onClick={() => router.push("/about")}
+            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+          >
+            BrightMinds Academy
+          </button>
+
+          <button
+            onClick={() => router.push("/faculty")}
+            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+          >
+            Our Faculty
+          </button>
+
+          <button
+            onClick={() => router.push("/campus")}
+            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+          >
+            Our Campus
+          </button>
+
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
 
               {/* COURSES MEGA MENU */}
               <div
@@ -148,7 +193,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 10 }}
                       exit={{ opacity: 0, y: 20 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-12 bg-white shadow-2xl rounded-xl p-8 w-[900px]"
+                      className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-2xl rounded-xl p-8 w-[900px]"
                     >
                       <div className="grid grid-cols-3 gap-8">
                         {courseCategories.map((category) => (
@@ -247,12 +292,54 @@ export default function Navbar() {
 
               {/* Navigation Links */}
               <div className="flex flex-col gap-5">
-                <button
-                  onClick={() => handleScrollToSection("about")}
-                  className="text-left text-[#19125e]"
-                >
-                  About us
-                </button>
+                {/* MOBILE ABOUT MENU */}
+
+<div>
+  <button
+    onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+    className="flex items-center justify-between w-full font-semibold text-[#19125e]"
+  >
+    About Us
+    <ChevronDown
+      size={18}
+      className={`transition-transform ${
+        mobileAboutOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  <AnimatePresence>
+    {mobileAboutOpen && (
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: "auto" }}
+        exit={{ height: 0 }}
+        className="overflow-hidden mt-3 flex flex-col gap-2 pl-2"
+      >
+        <button
+          onClick={() => {setMenuOpen(false); router.push("/about")}}
+          className="text-left text-gray-600 text-sm"
+        >
+          BrightMinds Academy
+        </button>
+
+        <button
+          onClick={() => {setMenuOpen(false); router.push("/faculty")}}
+          className="text-left text-gray-600 text-sm"
+        >
+          Our Faculty
+        </button>
+
+        <button
+          onClick={() => {setMenuOpen(false); router.push("/campus")}}
+          className="text-left text-gray-600 text-sm"
+        >
+          Our Campus
+        </button>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
 
                 {/* Courses Section */}
                 <div>

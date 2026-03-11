@@ -48,7 +48,8 @@ export default function ContactPage() {
 
       {/* subtle background glow */}
 
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,_#19125e,_transparent_60%)]"></div>
+     <div className="absolute top-0 left-0 w-full h-[450px] bg-linear-to-b from-[#19125e] to-[#19125e]"></div>
+
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -58,10 +59,17 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-5 md:mb-20 relative"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#19125e]">
-            Connect with Us
+            <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none opacity-[0.03]">
+
+        <h1 className="text-[120px] md:text-[180px] font-bold text-[#FFFFFF] whitespace-nowrap">
+          CONTACT
+        </h1>
+
+      </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#FFFFFF]">
+            Connect <span className="text-[#f0c44c]"> with us</span>
           </h1>
 
           {/* <p className="text-gray-600 mt-4 max-w-xl mx-auto text-sm md:text-base">
@@ -72,7 +80,7 @@ export default function ContactPage() {
 
         {/* CONTACT CARDS */}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
 
           {[
             {
@@ -119,7 +127,7 @@ export default function ContactPage() {
 
         {/* FORM + MAP */}
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* FORM SECTION */}
 
