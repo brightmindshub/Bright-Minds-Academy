@@ -10,37 +10,40 @@ import { useRouter } from "next/navigation";
 const courseCategories = [
   {
     title: "English & Language Tests",
+    page: "language-tests",
     courses: [
-      "IELTS (Academic & General)",
-      "PTE (Academic & Core)",
-      "Duolingo",
-      "CELPIP",
-      "OET",
-      "Spoken English (Beginner - Advanced)",
-      "French",
-      "German",
+      { name: "IELTS (Academic & General)", slug: "ielts" },
+      { name: "PTE (Academic & Core)", slug: "pte" },
+      { name: "Duolingo", slug: "duolingo" },
+      { name: "CELPIP", slug: "celpip" },
+      { name: "OET", slug: "oet" },
+      { name: "Spoken English (Beginner - Advanced)", slug: "spoken" },
+      { name: "French", slug: "french" },
+      { name: "German", slug: "german" },
     ],
   },
   {
     title: "Competitive Exams",
+    page: "competitive-exams",
     courses: [
-      "Sainik School",
-      "RIMC",
-      "Rashtriya Military School",
-      "SSC",
-      "CUET",
-      "CTET",
-      "HTET",
-      "Banking Exams",
+      { name: "Sainik School", slug: "sainik" },
+      { name: "RIMC", slug: "rimc" },
+      { name: "Rashtriya Military School", slug: "rms" },
+      { name: "SSC", slug: "ssc" },
+      { name: "CUET", slug: "cuet" },
+      { name: "CTET", slug: "ctet" },
+      { name: "HTET", slug: "htet" },
+      { name: "Banking Exams", slug: "banking" },
     ],
   },
   {
     title: "Academics",
+    page: "academics",
     courses: [
-      "Class 8 - 10 (Maths, Science, English)",
-      "Class 11 - 12 (Maths, Science, English)",
-      "Interview Preparation",
-      "Personality Development",
+      { name: "Class 8 - 10", slug: "class8to10" },
+      { name: "Class 11 - 12", slug: "class11to12" },
+      { name: "Interview Preparation", slug: "interviewPrep" },
+      { name: "Personality Development", slug: "personalityDev" },
     ],
   },
 ];
@@ -57,7 +60,7 @@ export default function Navbar() {
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleScrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -95,7 +98,9 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2">
               <Mail size={16} className="text-[#f0c44c]" />
-              <span className="text-xs md:text-sm">brightmindsacademy413@gmail.com</span>
+              <span className="text-xs md:text-sm">
+                brightmindsacademy413@gmail.com
+              </span>
             </div>
           </div>
         </div>
@@ -125,54 +130,52 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-8">
               {/* ABOUT MEGA MENU */}
 
-<div
-  className="relative"
-  onMouseEnter={() => setAboutOpen(true)}
-  onMouseLeave={() => setAboutOpen(false)}
->
-  <button className="flex items-center gap-1 text-[#19125e] font-medium relative group">
-    About Us
-    <ChevronDown size={16} />
-    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
-  </button>
+              <div
+                className="relative"
+                onMouseEnter={() => setAboutOpen(true)}
+                onMouseLeave={() => setAboutOpen(false)}
+              >
+                <button className="flex items-center gap-1 text-[#19125e] font-medium relative group">
+                  About Us
+                  <ChevronDown size={16} />
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
+                </button>
 
-  <AnimatePresence>
-    {aboutOpen && (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 10 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.3 }}
-        className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-xl rounded-xl p-6 w-[250px]"
-      >
-        <div className="flex flex-col gap-3">
+                <AnimatePresence>
+                  {aboutOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 10 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-xl rounded-xl p-6 w-[250px]"
+                    >
+                      <div className="flex flex-col gap-3">
+                        <button
+                          onClick={() => router.push("/about")}
+                          className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+                        >
+                          BrightMinds Academy
+                        </button>
 
-          <button
-            onClick={() => router.push("/about")}
-            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
-          >
-            BrightMinds Academy
-          </button>
+                        <button
+                          onClick={() => router.push("/faculty")}
+                          className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+                        >
+                          Our Faculty
+                        </button>
 
-          <button
-            onClick={() => router.push("/faculty")}
-            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
-          >
-            Our Faculty
-          </button>
-
-          <button
-            onClick={() => router.push("/campus")}
-            className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
-          >
-            Our Campus
-          </button>
-
-        </div>
-      </motion.div>
-    )}
-  </AnimatePresence>
-</div>
+                        <button
+                          onClick={() => router.push("/campus")}
+                          className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
+                        >
+                          Our Campus
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               {/* COURSES MEGA MENU */}
               <div
@@ -205,11 +208,11 @@ export default function Navbar() {
                             <div className="flex flex-col gap-2">
                               {category.courses.map((course) => (
                                 <Link
-                                  key={course}
-                                  href="/courses"
+                                  key={course.slug}
+                                  href={`/${category.page}?course=${course.slug}`}
                                   className="text-gray-600 hover:text-[#f0c44c] text-sm"
                                 >
-                                  {course}
+                                  {course.name}
                                 </Link>
                               ))}
                             </div>
@@ -246,7 +249,9 @@ export default function Navbar() {
               </button>
 
               <button
-                onClick={() => {router.push("/contact")}}
+                onClick={() => {
+                  router.push("/contact");
+                }}
                 className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition"
               >
                 Contact us
@@ -294,52 +299,61 @@ export default function Navbar() {
               <div className="flex flex-col gap-5">
                 {/* MOBILE ABOUT MENU */}
 
-<div>
-  <button
-    onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-    className="flex items-center justify-between w-full font-semibold text-[#19125e]"
-  >
-    About Us
-    <ChevronDown
-      size={18}
-      className={`transition-transform ${
-        mobileAboutOpen ? "rotate-180" : ""
-      }`}
-    />
-  </button>
+                <div>
+                  <button
+                    onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                    className="flex items-center justify-between w-full font-semibold text-[#19125e]"
+                  >
+                    About Us
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform ${
+                        mobileAboutOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-  <AnimatePresence>
-    {mobileAboutOpen && (
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: "auto" }}
-        exit={{ height: 0 }}
-        className="overflow-hidden mt-3 flex flex-col gap-2 pl-2"
-      >
-        <button
-          onClick={() => {setMenuOpen(false); router.push("/about")}}
-          className="text-left text-gray-600 text-sm"
-        >
-          BrightMinds Academy
-        </button>
+                  <AnimatePresence>
+                    {mobileAboutOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        className="overflow-hidden mt-3 flex flex-col gap-2 pl-2"
+                      >
+                        <button
+                          onClick={() => {
+                            setMenuOpen(false);
+                            router.push("/about");
+                          }}
+                          className="text-left text-gray-600 text-sm"
+                        >
+                          BrightMinds Academy
+                        </button>
 
-        <button
-          onClick={() => {setMenuOpen(false); router.push("/faculty")}}
-          className="text-left text-gray-600 text-sm"
-        >
-          Our Faculty
-        </button>
+                        <button
+                          onClick={() => {
+                            setMenuOpen(false);
+                            router.push("/faculty");
+                          }}
+                          className="text-left text-gray-600 text-sm"
+                        >
+                          Our Faculty
+                        </button>
 
-        <button
-          onClick={() => {setMenuOpen(false); router.push("/campus")}}
-          className="text-left text-gray-600 text-sm"
-        >
-          Our Campus
-        </button>
-      </motion.div>
-    )}
-  </AnimatePresence>
-</div>
+                        <button
+                          onClick={() => {
+                            setMenuOpen(false);
+                            router.push("/campus");
+                          }}
+                          className="text-left text-gray-600 text-sm"
+                        >
+                          Our Campus
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 {/* Courses Section */}
                 <div>
@@ -370,15 +384,15 @@ export default function Navbar() {
                               {category.title}
                             </p>
 
-                            <div className="flex flex-col gap-1 pl-3 mt-1">
+                            <div className="flex flex-col gap-2 pl-3 mt-1">
                               {category.courses.map((course) => (
                                 <Link
-                                  key={course}
-                                  href="/courses"
+                                  key={course.slug}
+                                  href={`/${category.page}?course=${course.slug}`}
                                   onClick={() => setMenuOpen(false)}
                                   className="text-gray-600 text-sm"
                                 >
-                                  {course}
+                                  {course.name}
                                 </Link>
                               ))}
                             </div>
@@ -411,7 +425,10 @@ export default function Navbar() {
                 </button>
 
                 <button
-                  onClick={() => {setMenuOpen(false); router.push("/contact")}}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    router.push("/contact");
+                  }}
                   className="bg-[#19125e] text-white text-center py-2 rounded-lg mt-2"
                 >
                   Contact Us

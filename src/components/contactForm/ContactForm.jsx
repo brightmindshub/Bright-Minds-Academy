@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
-export default function ContactForm({ courses }) {
+export default function ContactForm({ courses, defaultCourse  }) {
 
   const [form, setForm] = useState({
     name: "",
@@ -17,6 +17,12 @@ export default function ContactForm({ courses }) {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+  if (defaultCourse) {
+    setForm((prev) => ({ ...prev, course: defaultCourse }));
+  }
+}, [defaultCourse]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
