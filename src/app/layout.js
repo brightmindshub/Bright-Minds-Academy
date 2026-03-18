@@ -1,18 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsappChat/WhatsAppChat";
 import Footer from "@/components/footer/Footer";
 import LoaderWrapper from "@/components/loader/LoaderWrapper";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "600", "700"], // add weights you plan to use
+  style: ["normal", "italic"],   // optional: add if you use italics
 });
 
 export const metadata = {
@@ -60,15 +57,13 @@ const courses = [
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={poppins.variable}>
+      <body className="antialiased font-sans">
         <LoaderWrapper>
-        <WhatsAppChat courses={courses}/>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <WhatsAppChat courses={courses} />
+          <Navbar />
+          {children}
+          <Footer />
         </LoaderWrapper>
       </body>
     </html>

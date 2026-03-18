@@ -2,17 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { courseCategories } from "@/data/courses";
-
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
 
   return (
     <footer className="bg-[#19125e] text-white relative pt-16 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
-
         {/* Logo & Description */}
         <div className="flex flex-col gap-4">
           <Link href="/">
@@ -25,15 +32,24 @@ export default function Footer() {
             />
           </Link>
           <p className="text-gray-300">
-            BrightMinds Academy helps students achieve top scores in IELTS, PTE, CELPIP, Duolingo & competitive exams with expert guidance.
+            BrightMinds Academy helps students achieve top scores in IELTS, PTE,
+            CELPIP, Duolingo & competitive exams with expert guidance.
           </p>
 
           {/* Social Icons */}
           <div className="flex gap-8 mt-2">
-            <Link href="#" className="hover:text-[#f0c44c] transition"><Facebook size={20} /></Link>
-            <Link href="#" className="hover:text-[#f0c44c] transition"><Instagram size={20} /></Link>
-            <Link href="#" className="hover:text-[#f0c44c] transition"><Linkedin size={20} /></Link>
-            <Link href="#" className="hover:text-[#f0c44c] transition"><Twitter size={20} /></Link>
+            <Link href="#" className="hover:text-[#f0c44c] transition">
+              <Facebook size={20} />
+            </Link>
+            <Link href="#" className="hover:text-[#f0c44c] transition">
+              <Instagram size={20} />
+            </Link>
+            <Link href="#" className="hover:text-[#f0c44c] transition">
+              <Linkedin size={20} />
+            </Link>
+            <Link href="#" className="hover:text-[#f0c44c] transition">
+              <Twitter size={20} />
+            </Link>
           </div>
         </div>
 
@@ -41,11 +57,34 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
           <ul className="flex flex-col gap-2 text-gray-300">
-            <li><Link href="/about" className="hover:text-[#f0c44c] transition">About Us</Link></li>
-            <li><Link href="/reviews" className="hover:text-[#f0c44c] transition">Student Reviews</Link></li>
-            <li><Link href="/blogs" className="hover:text-[#f0c44c] transition">Blogs</Link></li>
-            <li><Link href="/faq-section" className="hover:text-[#f0c44c] transition">FAQs</Link></li>
-            <li><Link href="/contact" className="hover:text-[#f0c44c] transition">Contact us</Link></li>
+            <li>
+              <Link href="/about" className="hover:text-[#f0c44c] transition">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/reviews" className="hover:text-[#f0c44c] transition">
+                Student Reviews
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" className="hover:text-[#f0c44c] transition">
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/faq-section"
+                className="hover:text-[#f0c44c] transition"
+              >
+                FAQs
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[#f0c44c] transition">
+                Contact us
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -54,18 +93,34 @@ export default function Footer() {
           <h4 className="text-xl font-semibold mb-4">Our Courses</h4>
           {courseCategories.map((cat) => (
             <div key={cat.title} className="mb-4">
-              <h5 className="text-md font-semibold text-[#f0c44c] mb-2">{cat.title}</h5>
+              <h5 className="text-md font-semibold text-[#f0c44c] mb-2">
+                {cat.title}
+              </h5>
               <ul className="flex flex-col gap-1 text-gray-300">
-                {cat.courses.map((c) => (
-                  <li key={c.title}>
-                    <Link
-                      href="/courses"
-                      className="hover:text-[#f0c44c] transition text-sm"
-                    >
-                      {c.title}
-                    </Link>
-                  </li>
-                ))}
+                {cat.courses.map((c) => {
+                  const isLanguageCategory = cat.page === "language-tests";
+
+                  const href = isLanguageCategory
+                    ? `/${c.slug}`
+                    : `/${cat.page}?course=${c.slug}`;
+
+                  return (
+                    <li key={c.slug}>
+                      <button
+                        onClick={() => {
+                          router.push(href);
+
+                          setTimeout(() => {
+                            window.scrollTo(0, 0);
+                          }, 50);
+                        }}
+                        className="hover:text-[#f0c44c] transition text-sm text-left cursor-pointer"
+                      >
+                        {c.name}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -75,9 +130,17 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
           <ul className="flex flex-col gap-3 text-gray-300">
-            <li className="flex items-center gap-2"><Phone size={18} className="text-[#f0c44c]" /> +91 9217669989</li>
-            <li className="flex items-center gap-2"><Mail size={18} className="text-[#f0c44c]" /> info@brightmindshub.in</li>
-            <li className="flex items-start flex-col gap-2">Address: RZ- 58-61, Vashisht Park, Pankha Road, Near Sagarpur bus stand, New Delhi - 110046</li>
+            <li className="flex items-center gap-2">
+              <Phone size={18} className="text-[#f0c44c]" /> +91 9217669989
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={18} className="text-[#f0c44c]" />{" "}
+              info@brightmindshub.in
+            </li>
+            <li className="flex items-start flex-col gap-2">
+              Address: RZ- 58-61, Vashisht Park, Pankha Road, Near Sagarpur bus
+              stand, New Delhi - 110046
+            </li>
           </ul>
 
           <div className="mt-4">
@@ -89,7 +152,6 @@ export default function Footer() {
             ></iframe>
           </div>
         </div>
-
       </div>
 
       <div className="mt-12 border-t border-white/20 pt-6 text-center text-gray-400 text-sm">

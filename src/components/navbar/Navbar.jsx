@@ -6,52 +6,7 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-const courseCategories = [
-  {
-    title: "English & Language Tests",
-    page: "language-tests",
-    courses: [
-      { name: "IELTS (Academic & General)", slug: "ielts" },
-      { name: "PTE (Academic & Core)", slug: "pte" },
-      { name: "Duolingo", slug: "duolingo" },
-      { name: "CELPIP", slug: "celpip" },
-      { name: "OET", slug: "oet" },
-      { name: "Spoken English (Beginner - Advanced)", slug: "spoken" },
-      { name: "French", slug: "french" },
-      { name: "German", slug: "german" },
-    ],
-  },
-  {
-    title: "Competitive Exams",
-    page: "competitive-exams",
-    courses: [
-      { name: "Sainik School", slug: "sainik" },
-      { name: "RIMC", slug: "rimc" },
-      { name: "Rashtriya Military School", slug: "rms" },
-      { name: "SSC", slug: "ssc" },
-      { name: "CUET", slug: "cuet" },
-      { name: "CTET", slug: "ctet" },
-      { name: "HTET", slug: "htet" },
-      { name: "Banking Exams", slug: "banking" },
-    ],
-  },
-  {
-    title: "Academics",
-    page: "academics",
-    courses: [
-      { name: "Class 8 - 10", slug: "class8to10" },
-      { name: "Class 11 - 12", slug: "class11to12" },
-      { name: "Interview Preparation", slug: "interviewPrep" },
-      { name: "Personality Development", slug: "personalityDev" },
-    ],
-  },
-];
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-];
+import { courseCategories } from "@/data/courses";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,6 +16,13 @@ export default function Navbar() {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const router = useRouter();
+
+  const getCourseLink = (category, course) => {
+    if (category.page === "language-tests") {
+      return `/${course.slug}`;
+    }
+    return `/${category.page}?course=${course.slug}`;
+  };
 
   const handleScrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -117,14 +79,16 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* LOGO */}
-            <motion.div layoutId="brand-logo">
-              <Image
-                src="/brightMindsAcademy-logo.jpeg"
-                alt="logo"
-                width={230}
-                height={80}
-              />
-            </motion.div>
+            <Link href={"/"}>
+              <motion.div layoutId="brand-logo">
+                <Image
+                  src="/brightMindsAcademy-logo.jpeg"
+                  alt="logo"
+                  width={230}
+                  height={80}
+                />
+              </motion.div>
+            </Link>
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center gap-8">
@@ -207,13 +171,27 @@ export default function Navbar() {
 
                             <div className="flex flex-col gap-2">
                               {category.courses.map((course) => (
-                                <Link
+                                <button
                                   key={course.slug}
-                                  href={`/${category.page}?course=${course.slug}`}
-                                  className="text-gray-600 hover:text-[#f0c44c] text-sm"
+                                  onClick={() => {
+                                    const href = getCourseLink(
+                                      category,
+                                      course,
+                                    );
+
+                                    router.push(href);
+
+                                    // force scroll top
+                                    requestAnimationFrame(() => {
+                                      window.scrollTo(0, 0);
+                                    });
+
+                                    setCourseOpen(false);
+                                  }}
+                                  className="text-left text-gray-600 hover:text-[#f0c44c] text-sm cursor-pointer"
                                 >
                                   {course.name}
-                                </Link>
+                                </button>
                               ))}
                             </div>
                           </div>
@@ -386,14 +364,25 @@ export default function Navbar() {
 
                             <div className="flex flex-col gap-2 pl-3 mt-1">
                               {category.courses.map((course) => (
-                                <Link
+                                <button
                                   key={course.slug}
-                                  href={`/${category.page}?course=${course.slug}`}
-                                  onClick={() => setMenuOpen(false)}
-                                  className="text-gray-600 text-sm"
+                                  onClick={() => {
+                                    const href = getCourseLink(
+                                      category,
+                                      course,
+                                    );
+
+                                    setMenuOpen(false);
+                                    router.push(href);
+
+                                    requestAnimationFrame(() => {
+                                      window.scrollTo(0, 0);
+                                    });
+                                  }}
+                                  className="text-left text-gray-600 text-sm"
                                 >
                                   {course.name}
-                                </Link>
+                                </button>
                               ))}
                             </div>
                           </div>
