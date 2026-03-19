@@ -6,6 +6,8 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
 import Popup from "@/components/leadPopup/LeadPopup";
+import { IELTSOverview } from "./IeltsOverview";
+import { WhyChooseUs } from "./WhyChooseUs";
 
 const ieltsFaqs = [
   {
@@ -161,6 +163,9 @@ export default function IELTSPage() {
           </div>
         </div>
       </section>
+
+      <IELTSOverview setOpen={setOpen}/>
+      <WhyChooseUs setOpen={setOpen}/>
 
       <section className="py-24 bg-[#f7f8fc] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">

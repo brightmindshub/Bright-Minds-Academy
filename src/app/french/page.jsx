@@ -7,6 +7,8 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
 import Popup from "@/components/leadPopup/LeadPopup";
+import { FrenchOverview } from "./FrenchOverview";
+import { BeforeAfterFrench } from "./BeforeAfterFrench";
 
 const frenchFaqs = [
   {
@@ -203,6 +205,9 @@ export default function FrenchPage() {
           </motion.div>
         </div>
       </section>
+
+      <FrenchOverview setOpen={setOpen}/>
+      <BeforeAfterFrench setOpen={setOpen}/>
 
       <section className="relative py-24 bg-[#f9fbff] overflow-hidden">
         {/* 🌈 Background Glow */}

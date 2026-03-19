@@ -7,6 +7,8 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
 import Popup from "@/components/leadPopup/LeadPopup";
+import { GermanOverview } from "./GermanOverview";
+import { BeforeAfterGerman } from "./BeforeAfterGerman";
 
 const germanFaqs = [
   {
@@ -210,6 +212,9 @@ export default function GermanPage() {
           </motion.div>
         </div>
       </section>
+
+      <GermanOverview setOpen={setOpen}/>
+      <BeforeAfterGerman setOpen={setOpen}/>
 
       <section className="relative py-24 bg-[#f9fbff] overflow-hidden">
         {/* 🌈 Background Glow */}

@@ -6,6 +6,8 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
 import Popup from "@/components/leadPopup/LeadPopup";
+import { OETOverview } from "./OETOverview";
+import { BeforeAfterOET } from "./BeforeAfterOET";
 
 const oetFaqs = [
   {
@@ -175,7 +177,10 @@ export default function OetPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-         <h1 className="text-4xl md:text-5xl font-bold text-[#19125e] leading-tight">
+          <p className="text-[#19125e] font-semibold mb-3 border-l-4 border-[#f0c44c] pl-3">
+              OET Preparation Course
+            </p>
+         <h1 className="text-4xl md:text-5xl font-bold text-[#19125e] leading-[110%]">
   Achieve Your <span className="text-[#f0c44c]">OET Success {""}</span> 
   
   and Advance Your Healthcare Career
@@ -219,6 +224,9 @@ export default function OetPage() {
         </motion.div>
       </div>
     </section>
+
+    <OETOverview setOpen={setOpen}/>
+    <BeforeAfterOET setOpen={setOpen}/>
 
       <section className="relative py-24 bg-[#f9fbff] overflow-hidden">
       

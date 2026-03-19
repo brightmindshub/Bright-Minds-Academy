@@ -7,6 +7,8 @@
     import FAQSection from "@/components/faq/FaqSection";
     import { useRouter } from "next/navigation";
     import Popup from "@/components/leadPopup/LeadPopup";
+import { PTEOverview } from "./PTEoverview";
+import BeforeAfter from "./BeforeAfter";
 
     const pteFaqs = [
     {
@@ -160,6 +162,9 @@
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             >
+                <p className="text-[#19125e] font-semibold mb-3 border-l-4 border-[#f0c44c] pl-3">
+              PTE Preparation Program
+            </p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#19125e] leading-tight">
                 Smart <span className="text-[#f0c44c]">PTE Preparation</span>
                 <br />
@@ -207,6 +212,9 @@
             </motion.div>
         </div>
         </section>
+
+        <PTEOverview setOpen={setOpen}/>
+        <BeforeAfter setOpen={setOpen}/>
 
         <section className="relative py-24 bg-[#f9fbff] overflow-hidden">
         

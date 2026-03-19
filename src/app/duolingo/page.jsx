@@ -7,6 +7,8 @@ import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
 import Popup from "@/components/leadPopup/LeadPopup";
+import { DuolingoOverview } from "./DuolingoOverview";
+import { BeforeAfterDuolingo } from "./BeforeAfterDuolingo";
 
 const duolingoFaqs = [
   {
@@ -69,7 +71,6 @@ const features = [
   },
 ];
 
-
 const courses = [
   {
     title: "English & Language Tests",
@@ -113,17 +114,17 @@ export default function DuolingoPage() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-  const headerOffset = 200;
+    const headerOffset = 200;
 
-  window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0 });
 
-  setTimeout(() => {
-    window.scrollBy({
-      top: -headerOffset,
-      behavior: "smooth",
-    });
-  }, 50);
-}, []);
+    setTimeout(() => {
+      window.scrollBy({
+        top: -headerOffset,
+        behavior: "smooth",
+      });
+    }, 50);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -147,129 +148,128 @@ export default function DuolingoPage() {
         />
       </Popup>
 
-        <section className="relative overflow-hidden pt-40 pb-24 bg-gradient-to-r from-[#eef4ff] via-[#f7f8fc] to-[#ffffff]">
-      
-      {/* 🔵 Background Effects */}
-      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-[#19125e]/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-[-120px] right-[-100px] w-[350px] h-[350px] bg-[#f0c44c]/30 rounded-full blur-3xl" />
+      <section className="relative overflow-hidden pt-40 pb-24 bg-gradient-to-r from-[#eef4ff] via-[#f7f8fc] to-[#ffffff]">
+        {/* 🔵 Background Effects */}
+        <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-[#19125e]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-120px] right-[-100px] w-[350px] h-[350px] bg-[#f0c44c]/30 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10 relative z-10">
-        
-        {/* LEFT CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#19125e] leading-tight">
-  Crack <span className="text-[#f0c44c]">Duolingo English Test {" "}</span>
-  From Home
-</h1>
-
-<p className="text-gray-600 mt-6 max-w-lg">
-  Achieve your target Duolingo score faster with AI-based practice,
-  adaptive mock tests, and expert guidance — all from the comfort of your home.
-</p>
-
-{/* FEATURES LIST */}
-<div className="mt-6 space-y-2 text-gray-700">
-  <p>✔ 100% online test & preparation</p>
-  <p>✔ AI adaptive practice like real exam</p>
-  <p>✔ Fast results within 48 hours</p>
-  <p>✔ Daily speaking & writing feedback</p>
-  <p>✔ Personalized study plan & mentorship</p>
-</div>
-
-          <button
-            onClick={() => setOpen(true)}
-            className="mt-8 bg-[#19125e] text-white px-7 py-3 rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300"
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10 relative z-10">
+          {/* LEFT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            Book Free Demo
-          </button>
-        </motion.div>
+            <p className="text-[#19125e] font-semibold mb-3 border-l-4 border-[#f0c44c] pl-3">
+              Duolingo Preparation
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#19125e] leading-tight">
+              Crack{" "}
+              <span className="text-[#f0c44c]">Duolingo English Test </span>
+              From Home
+            </h1>
 
-        {/* RIGHT IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="relative flex justify-center"
-        >
-          {/* Image */}
-          <img
-            src="/assets/duolingo-asset.svg"
-            alt="PTE Student"
-            className="w-full md:w-[520px] h-[350px] md:h-[600px]  rounded-2xl  relative z-10"
-          />
+            <p className="text-gray-600 mt-6 max-w-lg">
+              Achieve your target Duolingo score faster with AI-based practice,
+              adaptive mock tests, and expert guidance — all from the comfort of
+              your home.
+            </p>
 
+            {/* FEATURES LIST */}
+            <div className="mt-6 space-y-2 text-gray-700">
+              <p>✔ 100% online test & preparation</p>
+              <p>✔ AI adaptive practice like real exam</p>
+              <p>✔ Fast results within 48 hours</p>
+              <p>✔ Daily speaking & writing feedback</p>
+              <p>✔ Personalized study plan & mentorship</p>
+            </div>
 
-        </motion.div>
-      </div>
-    </section>
+            <button
+              onClick={() => setOpen(true)}
+              className="mt-8 bg-[#19125e] text-white px-7 py-3 rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300"
+            >
+              Book Free Demo
+            </button>
+          </motion.div>
+
+          {/* RIGHT IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="relative flex justify-center"
+          >
+            {/* Image */}
+            <img
+              src="/assets/duolingo-asset.svg"
+              alt="PTE Student"
+              className="w-full md:w-[520px] h-[350px] md:h-[600px]  rounded-2xl  relative z-10"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      <DuolingoOverview setOpen={setOpen} />
+      <BeforeAfterDuolingo setOpen={setOpen} />
 
       <section className="relative py-24 bg-[#f9fbff] overflow-hidden">
-      
-      {/* 🌈 Background Glow */}
-      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-[#19125e]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-[#f0c44c]/20 rounded-full blur-3xl" />
+        {/* 🌈 Background Glow */}
+        <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-[#19125e]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-[#f0c44c]/20 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#19125e]">
-            Why Choose{" "}
-            <span className="text-[#f0c44c]">BrightMinds</span> for Duolingo?
-          </h2>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* HEADER */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#19125e]">
+              Why Choose <span className="text-[#f0c44c]">BrightMinds</span> for
+              Duolingo?
+            </h2>
 
-          <p className="text-gray-600 mt-4">
-            Everything you need to achieve a high Duolingo score — smart tools,
-            expert guidance, and a system designed for fast results.
-          </p>
-        </motion.div>
+            <p className="text-gray-600 mt-4">
+              Everything you need to achieve a high Duolingo score — smart
+              tools, expert guidance, and a system designed for fast results.
+            </p>
+          </motion.div>
 
-        {/* FEATURES GRID */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-          {features.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-[#19125e]/20 to-[#f0c44c]/30 hover:scale-[1.03] transition duration-300"
-            >
-              {/* Glass Card */}
-              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 h-full shadow-lg group-hover:shadow-2xl transition">
-                
-                {/* ICON */}
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#19125e]/10 text-xl mb-4">
-                  {item.icon}
+          {/* FEATURES GRID */}
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            {features.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-[#19125e]/20 to-[#f0c44c]/30 hover:scale-[1.03] transition duration-300"
+              >
+                {/* Glass Card */}
+                <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 h-full shadow-lg group-hover:shadow-2xl transition">
+                  {/* ICON */}
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#19125e]/10 text-xl mb-4">
+                    {item.icon}
+                  </div>
+
+                  {/* TITLE */}
+                  <h3 className="text-lg font-semibold text-[#19125e]">
+                    {item.title}
+                  </h3>
+
+                  {/* DESC */}
+                  <p className="text-gray-600 text-sm mt-2 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-
-                {/* TITLE */}
-                <h3 className="text-lg font-semibold text-[#19125e]">
-                  {item.title}
-                </h3>
-
-                {/* DESC */}
-                <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
-
-      </div>
-    </section>
-
+      </section>
 
       <section className="relative py-24 overflow-hidden">
         {/* BACKGROUND */}
@@ -278,7 +278,7 @@ export default function DuolingoPage() {
         {/* CURVED IMAGE LEFT */}
         <div className="absolute left-0 top-0 h-full w-[45%] hidden md:block overflow-hidden rounded-r-[300px]">
           <img
-            src="/assets/pte-asset.jpg" 
+            src="/assets/pte-asset.jpg"
             alt="PTE Student"
             className="w-full h-full object-cover"
           />

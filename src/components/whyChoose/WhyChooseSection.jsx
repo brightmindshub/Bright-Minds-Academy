@@ -72,13 +72,11 @@ export default function WhyChooseSection() {
 
   return (
     <section className="relative py-24 overflow-hidden bg-linear-to-br from-[#19125e]/10 via-white to-[#f0c44c]/10">
-        <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
-
-  <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">
-    Why Us?
-  </h2>
-
-</div>
+      <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
+        <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">
+          Why Us?
+        </h2>
+      </div>
       {/* Decorative background blobs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-[#19125e]/20 rounded-full blur-3xl"></div>
@@ -119,13 +117,16 @@ export default function WhyChooseSection() {
         <div className="relative mb-16">
           <div className="bg-linear-to-r from-[#19125e] to-[#2c2375] text-white rounded-xl p-8 shadow-xl text-center">
             <h3 className="text-2xl font-semibold mb-2">
-              Helping Students Achieve Their Study Abroad Dreams
+              Empowering Students to Excel Globally
             </h3>
 
             <p className="text-white/80 max-w-3xl mx-auto text-md">
-              At BrightMinds Academy, our mission is to empower students with
-              the right skills, strategies, and confidence to achieve top scores
-              in IELTS, PTE, CELPIP, and other competitive exams.
+              At Bright Minds Academy, we equip students with the knowledge,
+              skills, and confidence to succeed in language proficiency tests,
+              competitive exams, and academic courses. From IELTS, PTE, CELPIP,
+              and Duolingo to Spoken English, SSC, CUET, CTET, HTET and school
+              academics, we guide learners every step of the way to achieve
+              their study-abroad and career dreams.
             </p>
           </div>
 
@@ -183,10 +184,10 @@ export default function WhyChooseSection() {
 
       {/* Lead Form Modal */}
       <LeadFormModal
-              open={showLeadForm}
-              onClose={() => setShowLeadForm(false)}
-              courses={courses}
-            />
+        open={showLeadForm}
+        onClose={() => setShowLeadForm(false)}
+        courses={courses}
+      />
     </section>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
@@ -9,9 +8,9 @@ import LeadFormModal from "./LeadFormModal";
 
 const floatingCourses = [
   { name: "IELTS", position: "top-6 -left-6" },
-  { name: "PTE", position: "top-16 -right-8" },
+  { name: "SSC", position: "top-16 -right-8" },
   { name: "Spoken English", position: "bottom-16 -left-10" },
-  { name: "French", position: "bottom-6 right-6" },
+  { name: "CUET", position: "bottom-6 right-6" },
   { name: "German", position: "top-1/2 -right-10" },
 ];
 
@@ -64,8 +63,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-4xl lg:text-5xl font-bold text-[#19125e] leading-[110%]"
           >
-            Achieve Your Dream Score in{" "}
-            <span className="text-[#f0c44c]">IELTS & PTE</span>
+            Unlock Your Potential with{" "}
+            <span className="text-[#f0c44c]">Bright Minds Academy</span>
           </motion.h1>
 
           <motion.p
@@ -74,9 +73,8 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-gray-600 text-lg"
           >
-            Join Bright Minds Academy and prepare for IELTS, PTE, Spoken
-            English, and Competitive Exams with expert faculty and proven
-            strategies.
+          Master language tests, competitive exams, and academic subjects with our expert trainers, small batches, and proven strategies for guaranteed improvement.
+
           </motion.p>
 
           <motion.div
@@ -86,10 +84,10 @@ export default function Hero() {
             className="mt-6 space-y-3"
           >
             {[
-              "Certified Trainers",
-              "Small Batch Size",
-              "Mock Tests & Personal Feedback",
-              "Interview & Personality Development",
+              "Expert Trainers Across Subjects",
+              "Small Batch & Personalized Attention",
+              "Mock Tests & Detailed Feedback",
+              "Personality Development & Interview Prep",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle size={20} className="text-[#f0c44c]" />

@@ -42,7 +42,11 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-700 text-lg text-center max-w-3xl mx-auto mb-16"
         >
-          BrightMinds Academy is dedicated to mastering the scores that open doors. We provide premium support and training to turn your study-abroad dreams into a reality. Our experienced team guides students in IELTS, PTE, CELPIP, Duolingo, Spoken English, and competitive exams, ensuring a bright future.
+          Bright Minds Academy empowers students to achieve their full potential across 
+          language proficiency tests, competitive exams, and academic courses. 
+          We provide premium guidance, personalized mentorship, and proven strategies 
+          to help students excel in IELTS, PTE, CELPIP, Duolingo, Spoken English, 
+          Sainik School, RIMC, SSC, CUET, and school academics — ensuring success in every path they choose.
         </motion.p>
 
         {/* Mission & Vision Section */}
@@ -66,15 +70,15 @@ export default function AboutSection() {
             <ul className="flex flex-col gap-2 mt-2">
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                Certified Trainers
+                Certified Trainers Across Domains
               </li>
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                Mock Tests & Feedback
+                Mock Tests & Personalized Feedback
               </li>
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                Personalized Guidance
+                Individualized Learning Plans
               </li>
             </ul>
           </motion.div>
@@ -97,15 +101,15 @@ export default function AboutSection() {
             <ul className="flex flex-col gap-2 mt-2">
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                CELTA Certified Trainers
+                CELTA & Domain-Certified Trainers
               </li>
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                10+ Years Experience
+                10+ Years of Education Expertise
               </li>
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                Excellence in IELTS/PTE/CELPIP
+                Excellence Across All Courses
               </li>
             </ul>
           </motion.div>

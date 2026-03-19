@@ -1,0 +1,77 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export function BeforeAfterGerman({ setOpen }) {
+  return (
+    <section className="py-18 bg-linear-to-b from-[#f7f8fc] to-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* HEADER */}
+        <div className="text-center max-w-3xl mx-auto">
+          <p className="text-[#19125e] font-semibold mb-3 border-b-2 border-[#f0c44c] inline-block pb-1">
+            Your German Language Transformation
+          </p>
+
+          <h2 className="text-4xl font-bold text-[#19125e] leading-tight">
+            From Hesitant Beginner to Confident German Speaker
+          </h2>
+
+          <p className="mt-2 text-gray-600 text-lg leading-relaxed">
+            Gain fluency, improve pronunciation, and communicate confidently in German through our structured learning program.
+          </p>
+        </div>
+
+        {/* BEFORE & AFTER GRID */}
+        <div className="mt-20 grid md:grid-cols-2 gap-10">
+
+          {/* BEFORE */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-red-50 border border-red-100 p-10 rounded-3xl shadow-lg"
+          >
+            <h3 className="text-2xl font-bold text-red-600 mb-6">❌ Before</h3>
+            <ul className="space-y-4 text-gray-700">
+              <li>• Hesitant to speak German</li>
+              <li>• Limited vocabulary & grammar knowledge</li>
+              <li>• Mispronunciations and accent issues</li>
+              <li>• Difficulty understanding native speakers</li>
+              <li>• Fear of real-life conversations</li>
+              <li>• Low confidence in communication</li>
+            </ul>
+          </motion.div>
+
+          {/* AFTER */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-green-50 border border-green-100 p-10 rounded-3xl shadow-lg"
+          >
+            <h3 className="text-2xl font-bold text-green-600 mb-6">✅ After</h3>
+            <ul className="space-y-4 text-gray-700">
+              <li>• Speak German confidently in daily & professional situations</li>
+              <li>• Correct grammar and vocabulary usage</li>
+              <li>• Clear pronunciation and natural accent</li>
+              <li>• Comfortable conversing with native speakers</li>
+              <li>• Easily understand German media and conversations</li>
+              <li>• High confidence in communication and presentations</li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => setOpen(true)}
+            className="bg-[#19125e] text-white px-12 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition transform cursor-pointer"
+          >
+            Start Learning German Today
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
