@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function WhyChooseUs({ setOpen }) {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-28 bg-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HEADER */}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function BeforeAfterOET({ setOpen }) {
   return (
-    <section className="pb-18 bg-linear-to-b from-[#f7f8fc] to-white">
+    <section className="pb-18 bg-linear-to-b from-[#f7f8fc] to-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HEADER */}
