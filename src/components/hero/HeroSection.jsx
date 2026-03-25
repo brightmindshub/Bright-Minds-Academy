@@ -84,10 +84,10 @@ export default function Hero() {
             className="mt-6 space-y-3"
           >
             {[
-              "Expert Trainers Across Subjects",
-              "Small Batch & Personalized Attention",
+              "Expert Trainers of All Subjects",
+              "Small Batches & Personalized Attention",
               "Mock Tests & Detailed Feedback",
-              "Personality Development & Interview Prep",
+              "Personality Development & Interview Preparation",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle size={20} className="text-[#f0c44c]" />

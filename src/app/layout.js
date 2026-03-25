@@ -8,13 +8,17 @@ import LoaderWrapper from "@/components/loader/LoaderWrapper";
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["400", "600", "700"], // add weights you plan to use
-  style: ["normal", "italic"],   // optional: add if you use italics
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata = {
   title: "Bright Minds Academy",
-  description: "Excellence in Academics & Languages",
+  description: "Excellence in Languages & Competitive Exams",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const courses = [

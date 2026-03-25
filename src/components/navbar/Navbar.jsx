@@ -160,9 +160,9 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 10 }}
                       exit={{ opacity: 0, y: 20 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-2xl rounded-xl p-8 w-[900px]"
+                      className="absolute left-1/2 -translate-x-1/2 top-6 bg-white shadow-2xl rounded-xl p-8 w-200"
                     >
-                      <div className="grid grid-cols-3 gap-8">
+                      <div className="grid grid-cols-2 gap-10">
                         {courseCategories.map((category) => (
                           <div key={category.title}>
                             <h3 className="text-[#19125e] font-semibold mb-3 border-b pb-2">

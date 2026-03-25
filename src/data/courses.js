@@ -68,14 +68,12 @@ export const courseCategories = [
       { name: "Banking Exams", slug: "banking", img: "/assets/BANKING EXAMS.png", desc: "Get ready for banking exams with structured practice and mentorship." },
     ],
   },
-  {
-    title: "Academics",
-    page: "academics",
-    courses: [
-      { name: "Class 8 - 10", slug: "class8to10", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80", desc: "Strong foundation in Maths, Science & English for Class 8-10 students." },
-      { name: "Class 11 - 12", slug: "class11to12", img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80", desc: "Comprehensive preparation for Class 11-12 subjects." },
-      // { name: "Interview Preparation", slug: "interviewPrep", img: "/courses/interview.jpg", desc: "Ace your interviews with expert coaching and mock sessions." },
-      // { name: "Personality Development", slug: "personalityDev", img: "/courses/personality.jpg", desc: "Enhance your confidence, communication & overall personality." },
-    ],
-  },
+  // {
+  //   title: "Academics",
+  //   page: "academics",
+  //   courses: [
+  //     { name: "Class 8 - 10", slug: "class8to10", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80", desc: "Strong foundation in Maths, Science & English for Class 8-10 students." },
+  //     { name: "Class 11 - 12", slug: "class11to12", img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80", desc: "Comprehensive preparation for Class 11-12 subjects." },
+  //   ],
+  // },
 ];

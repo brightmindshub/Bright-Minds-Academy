@@ -42,11 +42,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-700 text-lg text-center max-w-3xl mx-auto mb-16"
         >
-          Bright Minds Academy empowers students to achieve their full potential across 
-          language proficiency tests, competitive exams, and academic courses. 
-          We provide premium guidance, personalized mentorship, and proven strategies 
-          to help students excel in IELTS, PTE, CELPIP, Duolingo, Spoken English, 
-          Sainik School, RIMC, SSC, CUET, and school academics — ensuring success in every path they choose.
+          Bright Minds Academy empowers students to achieve their full potential across Language Proficiency Tests (IELTS, PTE, Spoken English, French, German, and more) and Competitive Exams (Sainik School, RIMC, SSC, CUET, etc.). We provide premium guidance, personalized mentorship, and proven strategies to help students excel—ensuring success in every path they choose.
         </motion.p>
 
         {/* Mission & Vision Section */}
@@ -70,7 +66,7 @@ export default function AboutSection() {
             <ul className="flex flex-col gap-2 mt-2">
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />
-                Certified Trainers Across Domains
+                Certified Trainers of All Domains
               </li>
               <li className="flex items-center gap-2 text-gray-700">
                 <CheckCircle size={18} className="text-[#f0c44c]" />

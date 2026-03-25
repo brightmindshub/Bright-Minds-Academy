@@ -40,12 +40,12 @@ export default function CoursesSection() {
         <div className="w-20 h-0.75 bg-[#f0c44c] mx-auto mb-12 rounded-full"></div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-4 mb-12">
           {courseCategories.map(cat => (
             <button
               key={cat.title}
               onClick={() => setActiveTab(cat.title)}
-              className={`px-4 py-2 rounded-lg font-medium transition border cursor-pointer ${
+              className={`px-4 py-2 rounded-lg font-medium transition border cursor-pointer leading-tight md:leading-normal ${
                 activeTab === cat.title
                   ? "bg-[#19125e] text-white"
                   : "bg-white text-[#19125e] hover:bg-[#f0c44c] hover:text-[#19125e]"
