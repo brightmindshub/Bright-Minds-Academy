@@ -13,7 +13,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Bright Minds Academy",
-  description: "Excellence in Academics & Languages",
+  description: "Excellence in Languages & competitive exams",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({ children }) {
