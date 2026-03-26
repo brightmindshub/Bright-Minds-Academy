@@ -17,6 +17,24 @@ export const courseCategories = [
         desc: "Achieve your target PTE score faster with personalized study plans and expert feedback."
       },
       {
+        name: "French",
+        slug: "french",
+        img: "/assets/french.jpg",
+        desc: "Learn French from beginner to advanced with fun, interactive lessons."
+      },
+      {
+        name: "German",
+        slug: "german",
+        img: "/assets/german.jpg",
+        desc: "Master German language skills with structured lessons and real-world practice."
+      },
+      {
+        name: "Spoken English (Beginner - Advanced)",
+        slug: "spoken-english",
+        img: "/assets/spokenEngish.png",
+        desc: "Improve your spoken English fluency with interactive exercises and daily feedback."
+      },
+      {
         name: "Duolingo",
         slug: "duolingo",
         img: "/assets/duolingo.avif",
@@ -33,24 +51,6 @@ export const courseCategories = [
         slug: "oet",
         img: "/assets/OET.webp",
         desc: "Ace the OET for healthcare professionals with targeted practice and mentorship."
-      },
-      {
-        name: "Spoken English (Beginner - Advanced)",
-        slug: "spoken-english",
-        img: "/assets/spokenEngish.png",
-        desc: "Improve your spoken English fluency with interactive exercises and daily feedback."
-      },
-      {
-        name: "French",
-        slug: "french",
-        img: "/assets/french.jpg",
-        desc: "Learn French from beginner to advanced with fun, interactive lessons."
-      },
-      {
-        name: "German",
-        slug: "german",
-        img: "/assets/german.jpg",
-        desc: "Master German language skills with structured lessons and real-world practice."
       },
     ],
   },
