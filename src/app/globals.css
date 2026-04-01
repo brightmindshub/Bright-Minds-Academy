@@ -14,3 +14,60 @@ html{
 section {
   scroll-margin-top: 120px;
 }
+
+/* WORDPRESS BLOGS STYLE */
+.wp-content-wrap {
+  @apply leading-relaxed text-gray-800;
+}
+
+/* Headings */
+.wp-content-wrap h1, 
+.wp-content-wrap h2, 
+.wp-content-wrap h3 {
+  @apply text-[#19125e] font-bold mt-12 mb-6 leading-tight;
+}
+
+.wp-content-wrap h2 { @apply text-3xl md:text-4xl border-l-4 border-[#f0c44c] pl-6; }
+.wp-content-wrap h3 { @apply text-2xl md:text-3xl; }
+
+/* Paragraphs & Spacing */
+.wp-content-wrap p {
+  @apply mb-6 text-lg text-gray-700 leading-8;
+}
+
+/* Links */
+.wp-content-wrap a {
+  @apply text-[#19125e] font-semibold underline decoration-[#f0c44c] decoration-2 underline-offset-4 hover:text-[#f0c44c] transition-colors;
+}
+
+/* Lists */
+.wp-content-wrap ul, 
+.wp-content-wrap ol {
+  @apply my-8 ml-6 space-y-4;
+}
+
+.wp-content-wrap ul {
+  @apply list-disc marker:text-[#f0c44c];
+}
+
+.wp-content-wrap ol {
+  @apply list-decimal marker:text-[#19125e] marker:font-bold;
+}
+
+/* Images inside content */
+.wp-content-wrap figure {
+  @apply my-12;
+}
+
+.wp-content-wrap img {
+  @apply rounded-[2rem] shadow-lg border border-gray-100 mx-auto;
+}
+
+.wp-content-wrap figcaption {
+  @apply text-center text-sm text-gray-400 mt-4 italic;
+}
+
+/* Blockquotes */
+.wp-content-wrap blockquote {
+  @apply my-10 px-8 py-2 border-l-8 border-[#19125e] bg-gray-50 italic text-xl text-[#19125e] font-medium rounded-r-2xl;
+}
