@@ -1,4 +1,5 @@
-import Image from "next/image";
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getPosts } from "@/lib/api";
