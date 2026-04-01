@@ -313,7 +313,7 @@ export default function OetPage() {
           <div className="hidden md:block"></div>
 
           {/* RIGHT CONTENT */}
-          <div className="text-white max-w-md ml-auto px-10 md:px-0">
+          <div className="text-white max-w-md ml-auto">
             {/* HEADING */}
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#19125e]">
               Free OET preparation study tips

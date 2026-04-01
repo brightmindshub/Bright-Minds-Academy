@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import LeadFormModal from "./LeadFormModal";
+import GeneralLeadModal from "./GeneralLeadModal";
 
 const floatingCourses = [
   { name: "IELTS", position: "top-6 -left-6" },
@@ -51,17 +52,21 @@ const courseCategories = [
     ],
   },
 ];
+
 export default function Hero() {
-    const [leadFormOpen, setLeadFormOpen] = useState(false);
+  const [leadFormOpen, setLeadFormOpen] = useState(false);
+
   return (
-    <section className="pt-40 pb-20 bg-linear-to-br from-[#19125e]/10 via-white to-[#f0c44c]/20">
+    <section className="pt-40 pb-20 bg-linear-to-br from-[#19125e]/10 via-white to-[#f0c44c]/20 overflow-hidden">
+      <GeneralLeadModal />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl lg:text-5xl font-bold text-[#19125e] leading-[110%]"
+            className="text-4xl lg:text-5xl font-black text-[#19125e] leading-[1.1]"
           >
             Unlock Your Potential with{" "}
             <span className="text-[#f0c44c]">Bright Minds Academy</span>
@@ -71,10 +76,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-gray-600 text-lg"
+            className="mt-6 text-gray-600 text-lg leading-relaxed"
           >
-          Master language tests, competitive exams, and academic subjects with our expert trainers, small batches, and proven strategies for guaranteed improvement.
-
+            Master language tests, competitive exams, and academic subjects with
+            our expert trainers, small batches, and proven strategies for
+            guaranteed improvement.
           </motion.p>
 
           <motion.div
@@ -91,7 +97,7 @@ export default function Hero() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle size={20} className="text-[#f0c44c]" />
-                <span className="text-gray-700">{item}</span>
+                <span className="text-gray-700 font-medium">{item}</span>
               </div>
             ))}
           </motion.div>
@@ -100,54 +106,58 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex gap-4 mt-8"
+            className="flex gap-4 mt-10"
           >
             <button
               onClick={() => setLeadFormOpen(true)}
-              className="bg-[#19125e] text-white px-6 py-3 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition flex gap-1 items-center cursor-pointer"
+              className="bg-[#19125e] text-white px-8 py-4 rounded-2xl hover:bg-[#f0c44c] hover:text-[#19125e] transition-all flex gap-2 items-center cursor-pointer shadow-xl font-bold active:scale-95"
             >
-              Book Free Demo <span><ArrowRight width={20} height={20}/></span>
+              Book Free Demo <ArrowRight size={20} />
             </button>
           </motion.div>
+
           <LeadFormModal
-  open={leadFormOpen}
-  onClose={() => setLeadFormOpen(false)}
-  courses={courseCategories}
-/>
+            open={leadFormOpen}
+            onClose={() => setLeadFormOpen(false)}
+            courses={courseCategories}
+          />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <Image
-            src="/assets/hero-bg.jpg"
-            alt="IELTS Preparation"
-            width={600}
-            height={500}
-            className="rounded-xl shadow-lg"
-          />
+          <div className="relative z-10 shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white">
+            <Image
+              src="/assets/hero-bg.jpg"
+              alt="IELTS Preparation"
+              width={600}
+              height={500}
+              className="object-cover"
+              priority
+            />
+          </div>
 
           {floatingCourses.map((course, index) => (
             <motion.div
               key={course.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: [0, -10, 0] }}
+              animate={{ y: [0, -12, 0] }}
               transition={{
-                delay: index * 0.2,
-                duration: 3,
+                delay: index * 0.3,
+                duration: 4,
                 repeat: Infinity,
+                ease: "easeInOut",
               }}
-              className={`hidden md:block absolute ${course.position} bg-white border border-[#f0c44c] shadow-md px-4 py-2 rounded-full text-sm font-medium text-[#19125e]`}
+              className={`hidden md:block absolute z-20 ${course.position} bg-white/90 backdrop-blur-md border border-[#f0c44c]/30 shadow-lg px-5 py-2.5 rounded-2xl text-sm font-bold text-[#19125e]`}
             >
               {course.name}
             </motion.div>
           ))}
 
-          <div className="absolute -bottom-6 -left-4 md:-left-6 bg-[#f0c44c] text-[#19125e] px-5 py-3 rounded-lg shadow-lg font-semibold">
-            10+ Years of Experience
+          <div className="absolute -bottom-8 -right-4 md:-right-8 bg-[#f0c44c] text-[#19125e] px-6 py-4 rounded-2xl shadow-2xl font-black z-30 transform rotate-3">
+            10+ YEARS EXPERIENCE
           </div>
         </motion.div>
       </div>

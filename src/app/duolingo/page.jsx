@@ -292,7 +292,7 @@ export default function DuolingoPage() {
           <div className="hidden md:block"></div>
 
           {/* RIGHT CONTENT */}
-          <div className="text-white max-w-md ml-auto px-10 md:px-0">
+          <div className="text-white max-w-md ml-auto">
             {/* HEADING */}
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#19125e]">
               Free Duolingo preparation study tips
@@ -316,7 +316,7 @@ export default function DuolingoPage() {
         title="Want to Know More?"
       />
 
-      <section className="py-20 bg-gradient-to-r from-[#f0c44c] via-[#e6bb3c] to-[#d8a724]">
+      <section className="py-20 bg-linear-to-r from-[#f0c44c] via-[#e6bb3c] to-[#d8a724]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* LEFT IMAGE */}

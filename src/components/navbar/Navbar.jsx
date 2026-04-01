@@ -122,12 +122,12 @@ export default function Navbar() {
                           BrightMinds Academy
                         </button>
 
-                        <button
+                        {/* <button
                           onClick={() => router.push("/faculty")}
                           className="text-left text-gray-600 hover:text-[#f0c44c] text-md cursor-pointer"
                         >
                           Our Faculty
-                        </button>
+                        </button> */}
 
                         <button
                           onClick={() => router.push("/campus")}

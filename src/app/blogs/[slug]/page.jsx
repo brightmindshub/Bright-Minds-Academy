@@ -47,16 +47,16 @@ export default async function BlogDetail({ params }) {
 
   return (
     <article className="bg-white min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 pt-20 text-center">
+      <div className="max-w-4xl mx-auto px-6 pt-20">
         <span className="text-[#f0c44c] font-bold tracking-[0.2em] uppercase text-xs">
           Published Article
         </span>
         <h1
-          className="text-4xl md:text-5xl font-black text-[#19125e] mt-4 mb-6 leading-[1.1]"
+          className="text-3xl md:text-5xl font-black text-[#19125e] mt-4 mb-6 leading-[1.1]"
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
         <p className="text-gray-500 text-sm mb-6">{formattedDate}</p>
-        <div className="h-1 w-20 bg-[#f0c44c] mx-auto rounded-full" />
+        <div className="h-1 w-20 bg-[#f0c44c] rounded-full" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 mb-16 mt-12">

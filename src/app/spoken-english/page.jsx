@@ -292,11 +292,10 @@ export default function SpokenEnglishPage() {
 
         {/* CONTENT */}
         <div className="relative z-10 max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-center justify-center">
-          {/* EMPTY LEFT SPACE (important for layout) */}
           <div className="hidden md:block"></div>
 
           {/* RIGHT CONTENT */}
-          <div className="text-white max-w-md ml-auto px-10 md:px-0">
+          <div className="text-white max-w-md ml-auto">
             {/* HEADING */}
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#19125e]">
               Free English preparation study tips

@@ -2,7 +2,7 @@
 
 import ContactForm from "@/components/contactForm/ContactForm";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Star, MessageSquare } from "lucide-react";
 
 const courses = [
   {
@@ -78,7 +78,6 @@ export default function ContactPage() {
           </p> */}
         </motion.div>
 
-        {/* CONTACT CARDS */}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
 
@@ -125,79 +124,51 @@ export default function ContactPage() {
           })}
         </div>
 
-        {/* FORM + MAP */}
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  
+  <motion.div
+    initial={{ opacity: 0, x: -40 }}
+    animate={{ opacity: 1, x: 0 }}
+    className="lg:col-span-7 space-y-6"
+  >
+    <div>
+      <h2 className="text-3xl font-black text-[#19125e]">Get Free Counselling</h2>
+      <p className="text-gray-500 mt-2">Fill the form and our experts will contact you shortly.</p>
+    </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <ContactForm courses={courses} />
+  </motion.div>
 
-          {/* FORM SECTION */}
-
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-
-            {/* form header */}
-
-            <div>
-
-              <h2 className="text-2xl font-semibold text-[#19125e]">
-                Get Free Counselling
-              </h2>
-
-              <p className="text-gray-600 text-sm mt-1">
-                Fill the form and our experts will contact you shortly.
-              </p>
-
-            </div>
-
-            <ContactForm courses={courses} />
-
-            {/* whatsapp option */}
-
-            <a
-              href="https://wa.me/919217669989"
-              target="_blank"
-              className="flex items-center justify-center gap-2 text-green-600 font-medium hover:underline"
-            >
-              Chat with us on WhatsApp
-            </a>
-
-          </motion.div>
-
-          {/* MAP SECTION */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-2xl overflow-hidden shadow-xl h-[420px]"
-          >
-
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6864231732075!2d77.0974953793457!3d28.60918260000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1bf150b9df15%3A0xfc2fd93fcf89179a!2sBrightminds%20Academy%20(BMA)!5e0!3m2!1sen!2sin!4v1773056348422!5m2!1sen!2sin"
-              className="w-full h-full border-0"
-              loading="lazy"
-            />
-
-            {/* overlay card */}
-
-            <div className="absolute bottom-6 left-6 bg-white shadow-xl rounded-xl p-4 max-w-[220px]">
-
-              <p className="font-semibold text-[#19125e] text-sm">
-                BrightMinds Academy
-              </p>
-
-              <p className="text-xs text-gray-600 mt-1">
-                New Delhi
-              </p>
-
-            </div>
-
-          </motion.div>
-
-        </div>
+  <motion.div
+    initial={{ opacity: 0, x: 40 }}
+    animate={{ opacity: 1, x: 0 }}
+    className="lg:col-span-5 space-y-6"
+  >
+    <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[450px] border-[8px] border-white ring-1 ring-gray-100">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6864231732075!2d77.0974953793457!3d28.60918260000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1bf150b9df15%3A0xfc2fd93fcf89179a!2sBrightminds%20Academy%20(BMA)!5e0!3m2!1sen!2sin!4v1773056348422!5m2!1sen!2sin"
+        className="w-full h-full border-0 transition-all duration-1000"
+        loading="lazy"
+      />
+      
+      <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md shadow-xl rounded-2xl p-5 border border-white/50">
+        <p className="font-bold text-[#19125e]">Campus</p>
+        <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+          RZ-58-61, Pankha Road, New Delhi
+        </p>
+      </div>
+    </div>
+    
+    <a
+      href="https://wa.me/919217669989"
+      target="_blank"
+      className="flex items-center justify-center gap-3 bg-green-50 text-green-700 py-4 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all group"
+    >
+      <MessageSquare className="group-hover:scale-110 transition" />
+      Chat on WhatsApp
+    </a>
+  </motion.div>
+</div>
 
       </div>
     </main>

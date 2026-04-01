@@ -26,9 +26,8 @@ export default function Popup({
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.8, y: 50 }}
             onClick={(e) => e.stopPropagation()}
-            className={`bg-white rounded-2xl p-6 md:p-8 w-full ${maxWidth} shadow-2xl relative`}
+            className={`bg-white rounded-2xl p-4 md:p-6 w-full ${maxWidth} shadow-2xl relative`}
           >
-            {/* Close Button */}
             <button
               onClick={() => setOpen(false)}
               className="absolute top-3 right-4 text-gray-400 hover:text-black"
@@ -36,19 +35,16 @@ export default function Popup({
               ✕
             </button>
 
-            {/* Optional Title */}
             {title && (
               <h2 className="text-2xl font-bold text-[#19125e] mb-2">
                 {title}
               </h2>
             )}
 
-            {/* Optional Description */}
             {description && (
               <p className="text-gray-600 mb-6">{description}</p>
             )}
 
-            {/* Dynamic Content */}
             {children}
           </motion.div>
         </motion.div>
