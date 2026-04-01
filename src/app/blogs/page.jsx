@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import BlogCard from "@/components/blogs/BlogCard";
 import { getPosts } from "@/lib/api";
 
