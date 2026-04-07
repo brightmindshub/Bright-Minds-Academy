@@ -203,10 +203,10 @@ export default function Navbar() {
               </div>
 
               <button
-                onClick={() => handleScrollToSection("reviews")}
+                onClick={() => handleScrollToSection("results")}
                 className="relative group text-[#19125e] cursor-pointer"
               >
-                Reviews
+                Results
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
               </button>
 
@@ -309,7 +309,7 @@ export default function Navbar() {
                           BrightMinds Academy
                         </button>
 
-                        <button
+                        {/* <button
                           onClick={() => {
                             setMenuOpen(false);
                             router.push("/faculty");
@@ -317,7 +317,7 @@ export default function Navbar() {
                           className="text-left text-gray-600 text-sm"
                         >
                           Our Faculty
-                        </button>
+                        </button> */}
 
                         <button
                           onClick={() => {
@@ -393,10 +393,10 @@ export default function Navbar() {
                 </div>
 
                 <button
-                  onClick={() => handleScrollToSection("reviews")}
+                  onClick={() => handleScrollToSection("results")}
                   className="text-left text-[#19125e]"
                 >
-                  Reviews
+                  Results
                 </button>
 
                 <button

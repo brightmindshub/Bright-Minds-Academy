@@ -5,6 +5,7 @@ import BlogsSection from "@/components/blogs/BlogSection";
 import CoursesSection from "@/components/courses/CoursesSection";
 import FaqSection from "@/components/faq/FaqSection";
 import HeroSection from "@/components/hero/HeroSection";
+import StudentResults from "@/components/results/StudentResults";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import WhyChooseSection from "@/components/whyChoose/WhyChooseSection";
 
@@ -81,6 +82,7 @@ export default function Home() {
         <CoursesSection/>
         <AboutSection/>
         <WhyChooseSection/>
+        <StudentResults/>
         <TestimonialsSection/>
         <FaqSection faqs={faqs} courses={courses}/>
         <BlogsSection/>
