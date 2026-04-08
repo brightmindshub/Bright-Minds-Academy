@@ -24,9 +24,9 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <Link href="/">
             <Image
-              src="/brightMindsAcademy-logo.jpeg"
+              src="/BrightMindsAcademyLogo.png"
               alt="BrightMinds Academy"
-              width={200}
+              width={240}
               height={60}
               className="object-contain"
             />

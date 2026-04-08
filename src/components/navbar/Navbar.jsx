@@ -82,9 +82,9 @@ export default function Navbar() {
             <Link href={"/"}>
               <motion.div layoutId="brand-logo">
                 <Image
-                  src="/brightMindsAcademy-logo.jpeg"
+                  src="/BrightMindsAcademyLogo.png"
                   alt="logo"
-                  width={230}
+                  width={240}
                   height={80}
                 />
               </motion.div>

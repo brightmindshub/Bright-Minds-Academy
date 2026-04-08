@@ -35,6 +35,12 @@ export const courseCategories = [
         desc: "Improve your spoken English fluency with interactive exercises and daily feedback."
       },
       {
+        name: "Professional Nanny Course",
+        slug: "nanny-course",
+        img: "/assets/NannyCourseHero.webp",
+        desc: "Master the art of childcare with our comprehensive training program."
+      },
+      {
         name: "Duolingo",
         slug: "duolingo",
         img: "/assets/duolingo.avif",

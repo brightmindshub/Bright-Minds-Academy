@@ -13,12 +13,13 @@ const courses = [
     courses: [
       "IELTS (Academic & General)",
       "PTE (Academic & Core)",
-      "Duolingo",
-      "CELPIP",
-      "OET",
       "Spoken English (Beginner - Advanced)",
       "French",
       "German",
+      "Professional Nanny Course",
+      "Duolingo",
+      "CELPIP",
+      "OET",
     ],
   },
   {
@@ -60,6 +61,11 @@ const testimonials = [
     name: "Hemant Uniyal",
     score: "IELTS 7.5",
     youtubeId: "wp_s7UzfsFw",
+  },
+  {
+    name: "Simranpreet Kaur",
+    score: "IELTS 6.5",
+    youtubeId: "_dCGvCh21-I",
   },
   {
     name: "Rashmeet Kaur",

@@ -21,12 +21,13 @@ const courseCategories = [
     courses: [
       "IELTS (Academic & General)",
       "PTE (Academic & Core)",
+      "French",
+      "German",
+      "Professional Nanny Course",
       "Duolingo",
       "CELPIP",
       "OET",
       "Spoken English (Beginner - Advanced)",
-      "French",
-      "German",
     ],
   },
   {
