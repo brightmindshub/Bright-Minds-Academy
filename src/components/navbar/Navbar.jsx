@@ -34,10 +34,9 @@ export default function Navbar() {
       });
     }
 
-    setMenuOpen(false); // close mobile menu
+    setMenuOpen(false); 
   };
 
-  // navbar background change on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -61,7 +60,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <Mail size={16} className="text-[#f0c44c]" />
               <span className="text-xs md:text-sm">
-                brightmindsacademy413@gmail.com
+                info@brightmindshub.in
               </span>
             </div>
           </div>

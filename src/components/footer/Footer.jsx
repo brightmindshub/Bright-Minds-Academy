@@ -20,7 +20,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#19125e] text-white relative pt-16 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* Logo & Description */}
         <div className="flex flex-col gap-4">
           <Link href="/">
             <Image
@@ -36,7 +35,6 @@ export default function Footer() {
             CELPIP, Duolingo & competitive exams with expert guidance.
           </p>
 
-          {/* Social Icons */}
           <div className="flex gap-8 mt-2">
             <Link href="#" className="hover:text-[#f0c44c] transition">
               <Facebook size={20} />
@@ -53,7 +51,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
           <ul className="flex flex-col gap-2 text-gray-300">
@@ -88,7 +85,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Courses Category Quick Links */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Our Courses</h4>
           {courseCategories.map((cat) => (
@@ -99,7 +95,6 @@ export default function Footer() {
               <ul className="flex flex-col gap-1 text-gray-300">
                 {cat.courses.map((c) => {
                   const isLanguageCategory = cat.page === "language-tests";
-
                   const href = isLanguageCategory
                     ? `/${c.slug}`
                     : `/${cat.page}?course=${c.slug}`;
@@ -109,7 +104,6 @@ export default function Footer() {
                       <button
                         onClick={() => {
                           router.push(href);
-
                           setTimeout(() => {
                             window.scrollTo(0, 0);
                           }, 50);
@@ -126,20 +120,55 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Contact & Map */}
         <div className="flex flex-col gap-4">
           <h4 className="text-xl font-semibold mb-4">Contact Info</h4>
-          <ul className="flex flex-col gap-3 text-gray-300">
-            <li className="flex items-center gap-2">
-              <Phone size={18} className="text-[#f0c44c]" /> +91 9217669989
+          <ul className="flex flex-col gap-4 text-gray-300">
+            <li>
+              <div className="flex items-center gap-2 mb-2">
+                <Phone size={18} className="text-[#f0c44c]" />
+                <a href="tel:+911149841622" className="hover:text-[#f0c44c] transition">
+                  +91 1149841622
+                </a>
+              </div>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="https://wa.me/919217669989"
+                  className="flex items-center gap-2 hover:text-[#f0c44c] transition"
+                >
+                  <Image 
+                    src="/assets/whatsappIcon.svg" 
+                    alt="WhatsApp" 
+                    width={18} 
+                    height={18} 
+                  />
+                  9217669989
+                </a>
+                <a
+                  href="https://wa.me/918826380767"
+                  className="flex items-center gap-2 hover:text-[#f0c44c] transition"
+                >
+                  <Image 
+                    src="/assets/whatsappIcon.svg" 
+                    alt="WhatsApp" 
+                    width={18} 
+                    height={18} 
+                  />
+                  8826380767
+                </a>
+              </div>
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={18} className="text-[#f0c44c]" />{" "}
-              info@brightmindshub.in
+              <Mail size={18} className="text-[#f0c44c]" />
+              <a href="mailto:info@brightmindshub.in" className="hover:text-[#f0c44c] transition">
+                info@brightmindshub.in
+              </a>
             </li>
-            <li className="flex items-start flex-col gap-2">
-              Address: RZ- 58-61, Vashisht Park, Pankha Road, Near Sagarpur bus
-              stand, New Delhi - 110046
+            <li className="flex items-start gap-2">
+              <MapPin size={18} className="text-[#f0c44c] shrink-0 mt-1" />
+              <span className="text-sm">
+                RZ- 58-61, Vashisht Park, Pankha Road, Near Sagarpur bus
+                stand, New Delhi - 110046
+              </span>
             </li>
           </ul>
 

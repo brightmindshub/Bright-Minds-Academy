@@ -68,6 +68,16 @@ const testimonials = [
     youtubeId: "_dCGvCh21-I",
   },
   {
+    name: "Vibhor Dabas",
+    score: "IELTS 8.0",
+    youtubeId: "oAtb_RtJjEI",
+  },
+  {
+    name: "Khushi Dabas",
+    score: "IELTS 7.5",
+    youtubeId: "utD4I6Fu3XU",
+  },
+  {
     name: "Rashmeet Kaur",
     score: "IELTS student",
     youtubeId: "tdovjRlDcfg",

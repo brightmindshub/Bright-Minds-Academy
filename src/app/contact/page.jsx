@@ -2,7 +2,8 @@
 
 import ContactForm from "@/components/contactForm/ContactForm";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Star, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Star, MessageSquare, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const courses = [
   {
@@ -73,56 +74,89 @@ export default function ContactPage() {
             Connect <span className="text-[#f0c44c]"> with us</span>
           </h1>
 
-          {/* <p className="text-gray-600 mt-4 max-w-xl mx-auto text-sm md:text-base">
-            Have questions about our courses? <br />
-            Our counsellors are here to guide you.
-          </p> */}
         </motion.div>
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
-
-          {[
-            {
-              icon: Phone,
-              title: "Call Us",
-              value: "+91 9217669989",
-            },
-            {
-              icon: Mail,
-              title: "Email",
-              value: "brightmindsacademy413@gmail.com",
-            },
-            {
-              icon: MapPin,
-              title: "Visit Us",
-              value:
-                "RZ-58-61, Vashisht Park, Pankha Road, Near Sagarpur Bus Stand, New Delhi - 110046",
-            },
-          ].map((item, i) => {
-            const Icon = item.icon;
-
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className="group bg-white rounded-xl shadow-lg p-6 flex items-start gap-4 border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition"
-              >
-                <div className="bg-[#19125e]/10 p-3 rounded-lg group-hover:scale-110 transition">
-                  <Icon className="text-[#19125e]" size={22} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="group bg-white rounded-2xl p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 hover:border-[#f0c44c]/50 transition-all duration-300"
+          >
+            <div className="flex flex-col h-full space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-[#19125e] p-3 rounded-xl shadow-lg shadow-[#19125e]/20 group-hover:scale-110 transition-transform">
+                  <Phone className="text-white" size={24} />
                 </div>
-
                 <div>
-                  <p className="text-sm text-gray-500">{item.title}</p>
-                  <p className="font-semibold text-[#19125e] text-sm md:text-base">
-                    {item.value}
-                  </p>
+                  <h3 className="text-lg font-bold text-[#19125e]">Call Us</h3>
+                  <a href="tel:+911149841622" className="text-sm font-semibold text-gray-600 hover:text-[#19125e] transition-colors">
+                    +91 1149841622
+                  </a>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+
+              <div className="flex items-start gap-4 pt-6 border-t border-gray-100">
+                <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/20 group-hover:scale-110 transition-transform">
+                  {/* <MessageCircle className="text-white" size={24} /> */}
+                  <Image src={"/assets/whatsappIcon.svg"} height={24} width={24} alt="whatsappIcon"/>
+                </div>
+                <div className="space-y-3 flex-1">
+                  {/* <h3 className="text-lg font-bold text-[#19125e]">WhatsApp</h3> */}
+                  <div className="flex flex-col gap-2">
+                    <a href="https://wa.me/919217669989" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
+                      9217669989
+                      <MessageCircle size={14} />
+                    </a>
+                    <a href="https://wa.me/918826380767" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
+                      8826380767
+                      <MessageCircle size={14} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="group bg-white rounded-2xl p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 hover:border-[#f0c44c]/50 transition-all duration-300 flex flex-col justify-center"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-[#19125e] p-3 rounded-xl shadow-lg shadow-[#19125e]/20 group-hover:scale-110 transition-transform">
+                <Mail className="text-white" size={24} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-[#19125e]">Email Us</h3>
+                <p className="text-xs text-gray-400 uppercase tracking-wider font-medium">Response within 24hrs</p>
+              </div>
+            </div>
+            <a href="mailto:info@brightmindshub.in" className="block p-4 rounded-xl bg-gray-50 font-semibold text-[#19125e] hover:bg-[#19125e] hover:text-white transition-all text-center break-all">
+              info@brightmindshub.in
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="group bg-white rounded-2xl p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100 hover:border-[#f0c44c]/50 transition-all duration-300 flex flex-col justify-center"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-[#19125e] p-3 rounded-xl shadow-lg shadow-[#19125e]/20 group-hover:scale-110 transition-transform">
+                <MapPin className="text-white" size={24} />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-[#19125e]">Main Campus</h3>
+                <p className="text-xs text-gray-400 uppercase tracking-wider font-medium">New Delhi, India</p>
+              </div>
+            </div>
+            <p className="text-gray-600 leading-relaxed font-medium bg-gray-50 p-4 rounded-xl text-sm">
+              RZ-58-61, Vashisht Park, Pankha Road, Near Sagarpur Bus Stand, Delhi - 46
+            </p>
+          </motion.div>
         </div>
 
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
