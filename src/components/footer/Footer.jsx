@@ -141,7 +141,7 @@ export default function Footer() {
                     width={18} 
                     height={18} 
                   />
-                  9217669989
+                  +91 9217669989
                 </a>
                 <a
                   href="https://wa.me/918826380767"
@@ -153,7 +153,7 @@ export default function Footer() {
                     width={18} 
                     height={18} 
                   />
-                  8826380767
+                  +91 8826380767
                 </a>
               </div>
             </li>

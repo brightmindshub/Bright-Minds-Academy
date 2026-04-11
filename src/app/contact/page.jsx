@@ -105,11 +105,11 @@ export default function ContactPage() {
                   {/* <h3 className="text-lg font-bold text-[#19125e]">WhatsApp</h3> */}
                   <div className="flex flex-col gap-2">
                     <a href="https://wa.me/919217669989" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
-                      9217669989
+                      +91 9217669989
                       <MessageCircle size={14} />
                     </a>
                     <a href="https://wa.me/918826380767" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
-                      8826380767
+                      +91 8826380767
                       <MessageCircle size={14} />
                     </a>
                   </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                 <MapPin className="text-white" size={24} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[#19125e]">Main Campus</h3>
+                <h3 className="text-lg font-bold text-[#19125e]">Visit Us</h3>
                 <p className="text-xs text-gray-400 uppercase tracking-wider font-medium">New Delhi, India</p>
               </div>
             </div>
