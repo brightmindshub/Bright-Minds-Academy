@@ -78,9 +78,34 @@ const testimonials = [
     youtubeId: "utD4I6Fu3XU",
   },
   {
+    name: "Ashmeet Kaur",
+    score: "PTE Score: 75",
+    youtubeId: "oGvRHiq1x-k",
+  },
+  {
     name: "Rashmeet Kaur",
     score: "IELTS student",
     youtubeId: "tdovjRlDcfg",
+  },
+  {
+    name: "Gurpreet Singh",
+    score: "IELTS student",
+    youtubeId: "aT7Avlx0ZJM",
+  },
+  {
+    name: "Akashdeep Singh",
+    score: "PTE student",
+    youtubeId: "rtOjHbPRjok",
+  },
+  {
+    name: "Jaskaran Singh",
+    score: "PTE student",
+    youtubeId: "a16ydCuDbjI",
+  },
+  {
+    name: "Harjas Singh",
+    score: "PTE student",
+    youtubeId: "2dm8-kpnv_c",
   },
 ];
 
@@ -149,7 +174,7 @@ export default function TestimonialsSection() {
                     </div>
                     <h4 className="text-2xl font-black text-white uppercase italic tracking-tight">{t.name}</h4>
                     <p className="text-sm text-white/60 font-bold uppercase tracking-wider mb-2">
-                      Score: <span className="text-white">{t.score}</span>
+                      <span className="text-white">{t.score}</span>
                     </p>
                     <div className="flex text-[#f0c44c] gap-0.5">
                       {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
