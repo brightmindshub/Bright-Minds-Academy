@@ -11,6 +11,7 @@ import {
   Coffee,
 } from "lucide-react";
 import Link from "next/link";
+import GallerySection from "@/components/gallery/GallerySection";
 
 const galleryImages = [
   "/assets/dummy_campus_image.webp",
@@ -163,54 +164,11 @@ export default function CampusPage() {
           </div>
         </section>
 
-        <section className="relative py-16 mb-24 overflow-hidden bg-[#f0c44c] w-full">
-          <div className="text-center mb-14 relative z-10">
-            <h2 className="text-3xl font-bold text-[#19125e]">
-              Life at BrightMinds
-            </h2>
-
-            <p className="text-gray-600 mt-2">
-              A glimpse of our classrooms, activities, and student environment.
-            </p>
-          </div>
-
-          {/* slider container */}
-          <div className="relative w-full overflow-hidden">
-            <motion.div
-              className="flex gap-6"
-              animate={{ x: ["0%", "-70%"] }}
-              transition={{
-                repeat: Infinity,
-                ease: "linear",
-                duration: 30,
-              }}
-            >
-              {[...galleryImages, ...galleryImages, ...galleryImages].map(
-                (img, i) => (
-                  <div
-                    key={i}
-                    onClick={() => setIndex(i % galleryImages.length)}
-                    className="min-w-[280px] md:min-w-[350px] lg:min-w-[420px] cursor-pointer flex-shrink-0"
-                  >
-                    <div className="overflow-hidden rounded-2xl shadow-xl group">
-                      <Image
-                        src={img}
-                        alt="Campus"
-                        width={300}
-                        height={300}
-                        className="w-full h-[260px] md:h-[300px] lg:h-[300px] object-cover group-hover:scale-110 transition duration-500"
-                      />
-                    </div>
-                  </div>
-                ),
-              )}
-            </motion.div>
-          </div>
-        </section>
+        <GallerySection/>
 
         {/* VIDEO SECTION */}
 
-        <section className="max-w-7xl mx-auto px-6 mb-24">
+        {/* <section className="max-w-7xl mx-auto px-6 mb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#19125e]">Campus Tour</h2>
 
@@ -227,11 +185,11 @@ export default function CampusPage() {
               allowFullScreen
             ></iframe>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA */}
 
-        <section className="max-w-7xl mx-auto bg-linear-to-r from-[#19125e] to-[#2c2375] text-white rounded-2xl p-12 text-center shadow-xl">
+        <section className="w-full md:max-w-7xl mx-auto bg-linear-to-r from-[#19125e] to-[#2c2375] text-white rounded-none md:rounded-2xl p-12 text-center shadow-xl">
           <h2 className="text-3xl font-semibold mb-4">
             Visit Our Campus Today
           </h2>
