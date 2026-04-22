@@ -50,9 +50,9 @@ const courses = [
 
 const faqs = [
   {
-    question: "Which English exams do you prepare students for?",
+    question: "Which exams do you prepare students for?",
     answer:
-      "We provide expert coaching for IELTS, PTE, CELPIP, and other English proficiency exams required for studying or migrating abroad.",
+      "We provide expert coaching for IELTS, PTE, French, German and other English proficiency exams required for studying or migrating abroad.",
   },
   {
     question: "Do you offer online classes?",

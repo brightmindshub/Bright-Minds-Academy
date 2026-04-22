@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: "Personalized Attention",
-    desc: "Regular feedback and individual strategies for IELTS, PTE, CELPIP and other English tests.",
+    desc: "Regular feedback and individual strategies for IELTS, PTE, French, German and other English tests.",
     icon: MessageCircle,
   },
   {
@@ -124,9 +124,7 @@ export default function WhyChooseSection() {
             <p className="text-white/80 max-w-3xl mx-auto text-md">
               At Bright Minds Academy, we equip students with the knowledge,
               skills, and confidence to succeed in language proficiency tests,
-              competitive exams, and academic courses. From IELTS, PTE, CELPIP,
-              and Duolingo to Spoken English, SSC, CUET, CTET, HTET and school
-              academics, we guide learners every step of the way to achieve
+              competitive exams, and academic courses like IELTS, PTE, French, German and other English proficiency courses. We guide learners every step of the way to achieve
               their study-abroad and career dreams.
             </p>
           </div>

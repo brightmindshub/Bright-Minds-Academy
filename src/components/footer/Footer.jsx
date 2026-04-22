@@ -32,7 +32,7 @@ export default function Footer() {
           </Link>
           <p className="text-gray-300">
             BrightMinds Academy helps students achieve top scores in IELTS, PTE,
-            CELPIP, Duolingo & competitive exams with expert guidance.
+            French, German & competitive exams with expert guidance.
           </p>
 
           <div className="flex gap-8 mt-2">
@@ -60,18 +60,18 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/reviews" className="hover:text-[#f0c44c] transition">
+              <Link href="/#reviews" className="hover:text-[#f0c44c] transition">
                 Student Reviews
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="hover:text-[#f0c44c] transition">
+              <Link href="/#blogs" className="hover:text-[#f0c44c] transition">
                 Blogs
               </Link>
             </li>
             <li>
               <Link
-                href="/faq-section"
+                href="/#faq-section"
                 className="hover:text-[#f0c44c] transition"
               >
                 FAQs
