@@ -34,7 +34,7 @@ export default function Loader() {
           }}
           className="text-3xl sm:text-3xl md:text-5xl font-black text-[#19125e] uppercase text-center leading-[1.1]"
         >
-          Bright Minds <br className="block md:hidden" /> 
+          BrightMinds <br className="block md:hidden" /> 
           <span className="text-[#f0c44c]">Academy</span>
         </motion.h1>
 

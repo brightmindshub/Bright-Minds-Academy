@@ -122,7 +122,7 @@ export default function WhyChooseSection() {
             </h3>
 
             <p className="text-white/80 max-w-3xl mx-auto text-md">
-              At Bright Minds Academy, we equip students with the knowledge,
+              At BrightMinds Academy, we equip students with the knowledge,
               skills, and confidence to succeed in language proficiency tests,
               competitive exams, and academic courses like IELTS, PTE, French, German and other English proficiency courses. We guide learners every step of the way to achieve
               their study-abroad and career dreams.

@@ -70,7 +70,7 @@ export default function Hero() {
             className="text-4xl lg:text-5xl font-black text-[#19125e] leading-[1.1]"
           >
             Unlock Your Potential with{" "}
-            <span className="text-[#f0c44c]">Bright Minds Academy</span>
+            <span className="text-[#f0c44c]">BrightMinds Academy</span>
           </motion.h1>
 
           <motion.p

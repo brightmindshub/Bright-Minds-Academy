@@ -54,13 +54,15 @@ export default function Navbar() {
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
               <Phone size={16} className="text-[#f0c44c]" />
-              <span className="text-xs md:text-sm">+91 9217669989</span>
+              <span className="text-xs md:text-sm"><a href="tel:9217669989">+91 9217669989</a></span>
             </div>
 
             <div className="flex items-center gap-2">
               <Mail size={16} className="text-[#f0c44c]" />
               <span className="text-xs md:text-sm">
+                <a href="mailto:info@brightmindshub.in">
                 info@brightmindshub.in
+                </a>
               </span>
             </div>
           </div>
@@ -229,7 +231,7 @@ export default function Navbar() {
                 onClick={() => {
                   router.push("/contact");
                 }}
-                className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition"
+                className="bg-[#19125e] text-white px-5 py-2 rounded-lg hover:bg-[#f0c44c] hover:text-[#19125e] transition cursor-pointer"
               >
                 Contact us
               </button>

@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="hidden absolute inset-0 md:flex items-start justify-center pointer-events-none overflow-hidden">
 
   <h2 className="text-[50px] md:text-[130px] font-extrabold text-[#19125e] opacity-[0.04] tracking-widest whitespace-nowrap uppercase">
-    Bright Minds
+    BrightMinds
   </h2>
 
 </div>
@@ -42,7 +42,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-700 text-lg text-center max-w-3xl mx-auto mb-16"
         >
-          Bright Minds Academy empowers students to achieve their full potential across Language Proficiency Tests (IELTS, PTE, Spoken English, French, German, and more) and Competitive Exams (Sainik School, RIMC, SSC, CUET, etc.). We provide premium guidance, personalized mentorship, and proven strategies to help students excel—ensuring success in every path they choose.
+          BrightMinds Academy empowers students to achieve their full potential across Language Proficiency Tests (IELTS, PTE, Spoken English, French, German, and more) and Competitive Exams (Sainik School, RIMC, SSC, CUET, etc.). We provide premium guidance, personalized mentorship, and proven strategies to help students excel—ensuring success in every path they choose.
         </motion.p>
 
         {/* Mission & Vision Section */}
