@@ -68,9 +68,19 @@ const testimonials = [
     youtubeId: "_dCGvCh21-I",
   },
   {
+    name: "Viren",
+    score: "PTE Score: 78",
+    youtubeId: "EowQo1R0rwM",
+  },
+  {
     name: "Vibhor Dabas",
     score: "IELTS 8.0",
     youtubeId: "oAtb_RtJjEI",
+  },
+  {
+    name: "Kashika Das",
+    score: "PTE Score: 66",
+    youtubeId: "Q9cR9LRRve4",
   },
   {
     name: "Khushi Dabas",
@@ -83,8 +93,8 @@ const testimonials = [
     youtubeId: "oGvRHiq1x-k",
   },
   {
-    name: "Rashmeet Kaur",
-    score: "IELTS student",
+    name: "Raspreet Kaur",
+    score: "Spoken English student",
     youtubeId: "tdovjRlDcfg",
   },
   {

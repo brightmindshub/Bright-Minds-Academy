@@ -114,13 +114,24 @@ export default function CampusPage() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <Image
+            {/* <Image
               src="/assets/hero-bg.jpg"
               alt="BrightMinds Academy Campus"
               width={600}
               height={400}
               className="rounded-2xl shadow-xl object-cover"
-            />
+            /> */}
+            <div className="relative z-10 shadow-2xl rounded-[2.5rem] overflow-hidden border-2 border-white aspect-[6/5]">
+    <video
+      src="/videos/AcademyReel.mp4"
+      poster="/assets/gallery/academy5.jpeg"
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    />
+  </div>
           </motion.div>
         </section>
 

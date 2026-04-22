@@ -6,6 +6,7 @@ import CoursesSection from "@/components/courses/CoursesSection";
 import FaqSection from "@/components/faq/FaqSection";
 import HeroSection from "@/components/hero/HeroSection";
 import StudentResults from "@/components/results/StudentResults";
+import SmoothScroll from "@/components/scroll/SmoothScroll";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import WhyChooseSection from "@/components/whyChoose/WhyChooseSection";
 
@@ -77,8 +78,10 @@ const faqs = [
 ];
 
 export default function Home() {
+
   return (
     <>
+    <SmoothScroll/>
         <HeroSection/>
         <CoursesSection/>
         <AboutSection/>

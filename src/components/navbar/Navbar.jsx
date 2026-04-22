@@ -24,17 +24,32 @@ export default function Navbar() {
     return `/${category.page}?course=${course.slug}`;
   };
 
+  // const handleScrollToSection = (id) => {
+  //   const element = document.getElementById(id);
+
+  //   if (element) {
+  //     element.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+
+  //   setMenuOpen(false); 
+  // };
+
   const handleScrollToSection = (id) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (window.location.pathname !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
-
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
 
   useEffect(() => {

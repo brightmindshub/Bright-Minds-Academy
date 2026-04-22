@@ -124,7 +124,7 @@ export default function Hero() {
           />
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
@@ -160,7 +160,46 @@ export default function Hero() {
           <div className="absolute -bottom-8 -right-4 md:-right-8 bg-[#f0c44c] text-[#19125e] px-6 py-4 rounded-2xl shadow-2xl font-black z-30 transform rotate-3">
             10+ YEARS EXPERIENCE
           </div>
-        </motion.div>
+        </motion.div> */}
+
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8 }}
+  className="relative"
+>
+  <div className="relative z-10 shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white aspect-[6/5]">
+    <video
+      src="/videos/AcademyReel.mp4"
+      poster="/assets/gallery/academy5.jpeg"
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* {floatingCourses.map((course, index) => (
+    <motion.div
+      key={course.name}
+      animate={{ y: [0, -12, 0] }}
+      transition={{
+        delay: index * 0.3,
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className={`hidden md:block absolute z-20 ${course.position} bg-white/90 backdrop-blur-md border border-[#f0c44c]/30 shadow-lg px-5 py-2.5 rounded-2xl text-sm font-bold text-[#19125e]`}
+    >
+      {course.name}
+    </motion.div>
+  ))} */}
+
+  <div className="absolute -bottom-8 -right-4 md:-right-8 bg-[#f0c44c] text-[#19125e] px-6 py-4 rounded-2xl shadow-2xl font-black z-30 transform rotate-3">
+    10+ YEARS EXPERIENCE
+  </div>
+</motion.div>
       </div>
     </section>
   );
