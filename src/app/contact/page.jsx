@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-bold text-[#19125e]">Call Us</h3>
                   <a href="tel:+911149841622" className="text-sm font-semibold text-gray-600 hover:text-[#19125e] transition-colors">
-                    +91 1149841622
+                    +91 1149841622 - BMA Office
                   </a>
                 </div>
               </div>
@@ -104,13 +104,13 @@ export default function ContactPage() {
                 <div className="space-y-3 flex-1">
                   {/* <h3 className="text-lg font-bold text-[#19125e]">WhatsApp</h3> */}
                   <div className="flex flex-col gap-2">
-                    <a href="https://wa.me/919217669989" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
-                      +91 9217669989
-                      <MessageCircle size={14} />
+                    <a href="https://wa.me/919217669989" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all flex-col">
+                      +91 9217669989 <span>(Jeena John)</span>
+                      {/* <MessageCircle size={14} /> */}
                     </a>
-                    <a href="https://wa.me/918826380767" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all">
-                      +91 8826380767
-                      <MessageCircle size={14} />
+                    <a href="https://wa.me/918826380767" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all flex-col">
+                      +91 8826380767 <span>(Seema Sharma)</span>
+                      {/* <MessageCircle size={14} /> */}
                     </a>
                   </div>
                 </div>

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { courseCategories } from "@/data/courses";
+import ContactStrip from "../strip/ContactStrip";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50">
       {/* CONTACT STRIP */}
-      <div className="bg-[#19125e] text-white text-sm">
+      {/* <div className="bg-[#19125e] text-white text-sm">
         <div className="max-w-7xl mx-auto px-6 flex justify-center md:justify-end items-center gap-8 h-10">
           <div className="flex gap-6">
             <div className="flex items-center gap-2">
@@ -82,7 +83,9 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <ContactStrip/>
 
       {/* MAIN NAVBAR */}
       <motion.nav
