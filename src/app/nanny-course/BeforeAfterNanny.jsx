@@ -9,9 +9,6 @@ export default function NannyTransformation({ setOpen }) {
 
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto">
-          {/* <p className="text-[#19125e] font-semibold mb-3 border-b-2 border-[#f0c44c] inline-block pb-1">
-            Career Transformation
-          </p> */}
 
           <h2 className="text-4xl font-bold text-[#19125e]">
             From Aspiring to <span className="text-[#f0c44c]">Professional Nanny</span>
@@ -71,7 +68,7 @@ export default function NannyTransformation({ setOpen }) {
               <li>• Expert in child growth & milestones</li>
               <li>• Certified in Pediatric First Aid & CPR</li>
               <li>• Mastery in balanced child nutrition</li>
-              <li>• ISO Certified Diploma for global roles</li>
+              <li>• INA Certified Diploma for global roles</li>
               <li>• Confident in embassy/parent interviews</li>
               <li>• Eligible for high-paying international jobs</li>
             </ul>

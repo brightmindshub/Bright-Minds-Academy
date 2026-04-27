@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import LeadPopup from "@/components/leadPopup/LeadPopup";
 import ContactForm from "@/components/contactForm/ContactForm";
 import FAQSection from "@/components/faq/FaqSection";
 import { useRouter } from "next/navigation";
@@ -117,12 +116,10 @@ export default function NannyPage() {
       </Popup>
 
       <section className="relative overflow-hidden pt-35 pb-24 bg-gradient-to-r from-[#fdfcfb] via-[#f7f8fc] to-[#ffffff]">
-        {/* 🔵 Background Effects */}
         <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-[#19125e]/15 rounded-full blur-3xl" />
         <div className="absolute bottom-[-120px] right-[-100px] w-[350px] h-[350px] bg-[#f0c44c]/20 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10 relative z-10">
-          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,7 +139,6 @@ export default function NannyPage() {
               skills and global certification needed to work worldwide.
             </p>
 
-            {/* NANNY COURSE FEATURES */}
             <div className="mt-6 space-y-2 text-gray-700">
               <p className="flex items-center gap-2">
                 <span className="text-[#f0c44c]">✔</span> Child Growth and
@@ -173,7 +169,6 @@ export default function NannyPage() {
             </button>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -186,7 +181,6 @@ export default function NannyPage() {
               className="w-full md:w-[520px] h-[400px] md:h-[450px] object-cover rounded-2xl shadow-2xl relative z-10"
             />
 
-            {/* Glow Ring */}
             <div className="absolute w-[350px] h-[350px] border-2 border-[#19125e]/10 rounded-full top-10 animate-pulse" />
           </motion.div>
         </div>
@@ -197,7 +191,6 @@ export default function NannyPage() {
       <NannyOverview />
 
       <section className="relative py-24 overflow-hidden">
-        {/* BACKGROUND */}
         <div className="absolute inset-0 bg-[#f0c44c]" />
 
         <div className="absolute left-0 top-0 h-full w-[45%] hidden md:block overflow-hidden rounded-r-[300px]">
@@ -209,19 +202,14 @@ export default function NannyPage() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        {/* CONTENT */}
         <div className="relative z-10 max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-center justify-center">
-          {/* EMPTY LEFT SPACE (important for layout) */}
           <div className="hidden md:block"></div>
 
-          {/* RIGHT CONTENT */}
           <div className="text-white max-w-md ml-auto px-0">
-            {/* HEADING */}
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#19125e]">
               Enquire Now for Nanny course
             </h2>
 
-            {/* FORM */}
             <div className="bg-white p-6 rounded-2xl shadow-xl text-black">
               <ContactForm
                 courses={[{ title: "English", courses: ["Professional Nanny Course"] }]}
@@ -242,7 +230,6 @@ export default function NannyPage() {
       <section className="py-20 bg-gradient-to-r from-[#f0c44c] via-[#e6bb3c] to-[#d8a724]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            {/* LEFT IMAGE */}
             <div className="relative w-full md:w-1/2">
               <div className="overflow-hidden rounded-[40px] shadow-xl ring-4 ring-[#19125e]">
                 <img
@@ -253,7 +240,6 @@ export default function NannyPage() {
               </div>
             </div>
 
-            {/* RIGHT CONTENT */}
             <div className="w-full md:w-1/2 text-center md:text-left text-[#19125e]">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
                 Need Help?

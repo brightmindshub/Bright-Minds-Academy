@@ -98,19 +98,15 @@ export default function ContactPage() {
 
               <div className="flex items-start gap-4 pt-6 border-t border-gray-100">
                 <div className="bg-[#25D366] p-3 rounded-xl shadow-lg shadow-[#25D366]/20 group-hover:scale-110 transition-transform">
-                  {/* <MessageCircle className="text-white" size={24} /> */}
                   <Image src={"/assets/whatsappIcon.svg"} height={24} width={24} alt="whatsappIcon"/>
                 </div>
                 <div className="space-y-3 flex-1">
-                  {/* <h3 className="text-lg font-bold text-[#19125e]">WhatsApp</h3> */}
                   <div className="flex flex-col gap-2">
                     <a href="https://wa.me/919217669989" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all flex-col">
                       +91 9217669989 <span>(Jeena John)</span>
-                      {/* <MessageCircle size={14} /> */}
                     </a>
                     <a href="https://wa.me/918826380767" className="flex items-center justify-between p-2.5 rounded-xl bg-green-50 text-[#19125e] font-bold text-sm hover:bg-green-500 hover:text-white transition-all flex-col">
                       +91 8826380767 <span>(Seema Sharma)</span>
-                      {/* <MessageCircle size={14} /> */}
                     </a>
                   </div>
                 </div>

@@ -9,13 +9,11 @@ export default function AboutPage() {
   return (
     <main className="relative bg-[#f7f8fc] min-h-screen pt-40 pb-20 overflow-hidden">
 
-      {/* BACKGROUND GLOW */}
 
       <div className="absolute top-0 left-0 w-full h-[500px] bg-linear-to-b from-[#19125e]/10 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* HERO SECTION */}
 
         <section className="grid lg:grid-cols-2 gap-12 items-center mb-28">
 
@@ -76,7 +74,6 @@ export default function AboutPage() {
 
           </motion.div>
 
-          {/* IMAGE SIDE */}
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -93,7 +90,6 @@ export default function AboutPage() {
               className="rounded-2xl shadow-2xl object-cover"
             />
 
-            {/* floating badge */}
 
             <div className="absolute -bottom-6 -left-4 bg-white shadow-xl rounded-xl p-4">
 
@@ -109,7 +105,6 @@ export default function AboutPage() {
 
         </section>
 
-        {/* MISSION VISION */}
 
         <section className="grid md:grid-cols-2 gap-10 mb-28">
 
@@ -148,12 +143,10 @@ export default function AboutPage() {
 
         </section>
 
-        {/* WHY CHOOSE US */}
 
         <section className="mb-28">
 
           <div className="text-center mb-14 relative">
-                  {/* FLOATING TEXT BACKGROUND */}
 
       <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none opacity-[0.03]">
 

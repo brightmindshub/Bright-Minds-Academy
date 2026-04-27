@@ -16,7 +16,7 @@ const NannyOverview = () => {
     {
       icon: <Award className="w-8 h-8 text-[#f0c44c]" />,
       title: "Global Certification",
-      description: "Get an ISO-certified diploma recognized in Canada, UK, Australia, and Middle East countries."
+      description: "Get an INA-certified diploma recognized in Canada, UK, Australia, and Middle East countries."
     },
     {
       icon: <Heart className="w-8 h-8 text-[#f0c44c]" />,
