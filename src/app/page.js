@@ -86,7 +86,7 @@ export default function Home() {
         <CoursesSection/>
         <AboutSection/>
         <WhyChooseSection/>
-        <StudentResults/>
+        {/* <StudentResults/> */}
         <TestimonialsSection/>
         <FaqSection faqs={faqs} courses={courses}/>
         <BlogsSection/>

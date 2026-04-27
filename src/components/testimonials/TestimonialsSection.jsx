@@ -57,21 +57,21 @@ const testimonials = [
     score: "IELTS 7.0",
     youtubeId: "-r4gAFQ5W8k",
   },
-  {
-    name: "Hemant Uniyal",
-    score: "IELTS 7.5",
-    youtubeId: "wp_s7UzfsFw",
-  },
+  // {
+  //   name: "Hemant Uniyal",
+  //   score: "IELTS 7.5",
+  //   youtubeId: "wp_s7UzfsFw",
+  // },
   {
     name: "Simranpreet Kaur",
     score: "IELTS 6.5",
     youtubeId: "_dCGvCh21-I",
   },
-  {
-    name: "Viren",
-    score: "PTE Score: 78",
-    youtubeId: "EowQo1R0rwM",
-  },
+  // {
+  //   name: "Viren",
+  //   score: "PTE Score: 78",
+  //   youtubeId: "EowQo1R0rwM",
+  // },
   {
     name: "Vibhor Dabas",
     score: "IELTS 8.0",

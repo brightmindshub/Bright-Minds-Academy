@@ -222,10 +222,10 @@ export default function Navbar() {
               </div>
 
               <button
-                onClick={() => handleScrollToSection("results")}
+                onClick={() => handleScrollToSection("reviews")}
                 className="relative group text-[#19125e] cursor-pointer"
               >
-                Results
+                Reviews
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#f0c44c] transition-all group-hover:w-full"></span>
               </button>
 
