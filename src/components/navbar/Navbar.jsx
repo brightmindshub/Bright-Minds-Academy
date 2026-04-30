@@ -412,10 +412,10 @@ export default function Navbar() {
                 </div>
 
                 <button
-                  onClick={() => handleScrollToSection("results")}
+                  onClick={() => handleScrollToSection("reviews")}
                   className="text-left text-[#19125e]"
                 >
-                  Results
+                  Reviews
                 </button>
 
                 <button
