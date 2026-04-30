@@ -5,6 +5,8 @@ import WhatsAppChat from "@/components/whatsappChat/WhatsAppChat";
 import Footer from "@/components/footer/Footer";
 import LoaderWrapper from "@/components/loader/LoaderWrapper";
 
+const isDev = process.env.SITE_TYPE === "dev";
+
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
@@ -13,12 +15,17 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Bright Minds Academy",
-  description: "Excellence in Languages & Competitive Exams",
-  robots: {
-    index: false,
-    follow: false,
-  },
+  title: "BrightMinds Academy",
+  description: "Excellence in Language & Academics",
+  robots: isDev
+    ? {
+        index: false,
+        follow: false,
+      }
+    : {
+        index: true,
+        follow: true,
+      },
 };
 
 const courses = [
