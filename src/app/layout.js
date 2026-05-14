@@ -3,7 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsappChat/WhatsAppChat";
 import Footer from "@/components/footer/Footer";
-import LoaderWrapper from "@/components/loader/LoaderWrapper";
+import LoaderWrapper from "@/components/loader/LoaderWrapper";4
+import Script from "next/script";
 
 const isDev = process.env.SITE_TYPE === "dev";
 
@@ -17,6 +18,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "BrightMinds Academy",
   description: "Excellence in Language & Academics",
+  verification: {
+    google: "xqENgQ-3vOtZdD7ixzhksTmm0g8iOUTzxn1zggRzadw",
+  },
   robots: isDev
     ? {
         index: false,
@@ -77,6 +81,20 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </LoaderWrapper>
+         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X71Y2BCNRR"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-X71Y2BCNRR');
+          `}
+        </Script>
       </body>
     </html>
   );
