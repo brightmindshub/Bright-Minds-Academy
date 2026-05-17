@@ -65,7 +65,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#blogs" className="hover:text-[#f0c44c] transition">
+              <Link href="/blogs" className="hover:text-[#f0c44c] transition">
                 Blogs
               </Link>
             </li>
