@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import WhatsAppChat from "@/components/whatsappChat/WhatsAppChat";
 import Footer from "@/components/footer/Footer";
-import LoaderWrapper from "@/components/loader/LoaderWrapper";4
+import LoaderWrapper from "@/components/loader/LoaderWrapper";
 import Script from "next/script";
 
 const isDev = process.env.SITE_TYPE === "dev";
