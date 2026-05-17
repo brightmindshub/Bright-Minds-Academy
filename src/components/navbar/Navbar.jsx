@@ -230,7 +230,9 @@ export default function Navbar() {
               </button>
 
               <button
-                onClick={() => handleScrollToSection("blogs")}
+                onClick={() => {
+                  router.push("/blogs");
+                }}
                 className="relative group text-[#19125e] cursor-pointer"
               >
                 Blogs
@@ -419,7 +421,10 @@ export default function Navbar() {
                 </button>
 
                 <button
-                  onClick={() => handleScrollToSection("blogs")}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    router.push("/blogs");
+                  }}
                   className="text-left text-[#19125e]"
                 >
                   Blogs
