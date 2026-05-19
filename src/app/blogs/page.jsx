@@ -3,6 +3,15 @@ export const dynamic = "force-dynamic";
 import BlogCard from "@/components/blogs/BlogCard";
 import { getPosts } from "@/lib/api";
 
+export const metadata = {
+  title: "Explore the Latest Blogs | BrightMinds",
+  description:
+    "Explore the latest blogs from BrightMinds for tips, insights, and updates on language learning, exam preparation, career growth, and skill development.",
+  alternates: {
+    canonical: "https://brightmindshub.in/blogs",
+  },
+};
+
 export default async function BlogPage() {
   const blogs = await getPosts();
 

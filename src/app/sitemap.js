@@ -3,7 +3,7 @@ import { courseCategories } from "@/data/courses";
 export default async function sitemap() {
   const baseUrl = "https://brightmindshub.in";
 
-  const staticRoutes = ["", "/about", "/contact", "/campus", "/reviews", "/blogs", "/faq-section"];
+  const staticRoutes = ["", "/about", "/contact", "/campus", "/blogs"];
   
   const staticPages = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
