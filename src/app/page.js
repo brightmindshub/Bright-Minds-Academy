@@ -10,6 +10,14 @@ import SmoothScroll from "@/components/scroll/SmoothScroll";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import WhyChooseSection from "@/components/whyChoose/WhyChooseSection";
 
+export const metadata = {
+title: "Smart Preparation for IELTS, PTE & OET | BrightMinds",
+description: "Prepare for IELTS, PTE, and OET with expert guidance at BrightMinds. Improve your English speaking skills with simple and effective training.",
+alternates: {
+  canonical: "https://brightmindshub.in/"
+},
+};
+
 const courses = [
   {
     title: "English & Language Tests",
